@@ -1,0 +1,3572 @@
+{
+  "protocol" : "Zrpe1",
+  "namespace" : "com.zafin.zplatform",
+  "version" : "string",
+  "types" : [ {
+    "type" : "record",
+    "name" : "LongType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "IntegerType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "StringType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DateType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DecimalType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "BooleanType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ModelIdReferenceType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    }, {
+      "name" : "referenceModelType",
+      "type" : "string"
+    }, {
+      "name" : "referenceId",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "TemporalModelIdReferenceType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    }, {
+      "name" : "referenceModelType",
+      "type" : "string"
+    }, {
+      "name" : "referenceId",
+      "type" : "string"
+    }, {
+      "name" : "revisionModelIdReferences",
+      "type" : {
+        "type" : "array",
+        "items" : "ModelIdReferenceType"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ModelListSizeType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    }, {
+      "name" : "modelIdReferences",
+      "type" : {
+        "type" : "array",
+        "items" : "ModelIdReferenceType"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "BlobType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ClobType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "LongArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "StringArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DateArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DecimalArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "BooleanArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "IntegerArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "data",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ScheduledEventResult",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "eventStatus",
+      "type" : {
+        "type" : "enum",
+        "name" : "EventStatus",
+        "symbols" : [ "SUCCESS", "CLIENT_ERROR", "SERVER_ERROR" ]
+      }
+    }, {
+      "name" : "message",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ScheduledEvent",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "clientId",
+      "type" : "string"
+    }, {
+      "name" : "locale",
+      "type" : "string"
+    }, {
+      "name" : "result",
+      "type" : {
+        "type" : "record",
+        "name" : "EventResult",
+        "fields" : [ {
+          "name" : "modelId",
+          "type" : "string"
+        }, {
+          "name" : "modelType",
+          "type" : "string"
+        }, {
+          "name" : "Id",
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "type" : "string"
+        }, {
+          "name" : "description",
+          "type" : "string"
+        }, {
+          "name" : "createdBy",
+          "type" : "string"
+        }, {
+          "name" : "modifiedBy",
+          "type" : "string"
+        }, {
+          "name" : "branchId",
+          "type" : "string"
+        }, {
+          "name" : "repositoryId",
+          "type" : "string"
+        }, {
+          "name" : "active",
+          "type" : "boolean"
+        }, {
+          "name" : "createdOn",
+          "type" : "string"
+        }, {
+          "name" : "modifiedOn",
+          "type" : "string"
+        }, {
+          "name" : "revision",
+          "type" : "string"
+        }, {
+          "name" : "parentRevision",
+          "type" : "string"
+        }, {
+          "name" : "concreteModelType",
+          "type" : "string"
+        }, {
+          "name" : "businessDateFrom",
+          "type" : "string"
+        }, {
+          "name" : "businessDateTo",
+          "type" : "string"
+        }, {
+          "name" : "temporalModelId",
+          "type" : "string"
+        }, {
+          "name" : "templateId",
+          "type" : "string"
+        }, {
+          "name" : "eventStatus",
+          "type" : "EventStatus"
+        }, {
+          "name" : "message",
+          "type" : "string"
+        } ]
+      }
+    }, {
+      "name" : "targetModelId",
+      "type" : "string"
+    }, {
+      "name" : "targetModelType",
+      "type" : "string"
+    }, {
+      "name" : "notificationStartDate",
+      "type" : "string"
+    }, {
+      "name" : "notificationEndDate",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "I18n",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "i18nTexts",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "I18nText",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "Id",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "createdBy",
+            "type" : "string"
+          }, {
+            "name" : "modifiedBy",
+            "type" : "string"
+          }, {
+            "name" : "branchId",
+            "type" : "string"
+          }, {
+            "name" : "repositoryId",
+            "type" : "string"
+          }, {
+            "name" : "active",
+            "type" : "boolean"
+          }, {
+            "name" : "createdOn",
+            "type" : "string"
+          }, {
+            "name" : "modifiedOn",
+            "type" : "string"
+          }, {
+            "name" : "revision",
+            "type" : "string"
+          }, {
+            "name" : "parentRevision",
+            "type" : "string"
+          }, {
+            "name" : "concreteModelType",
+            "type" : "string"
+          }, {
+            "name" : "businessDateFrom",
+            "type" : "string"
+          }, {
+            "name" : "businessDateTo",
+            "type" : "string"
+          }, {
+            "name" : "temporalModelId",
+            "type" : "string"
+          }, {
+            "name" : "templateId",
+            "type" : "string"
+          }, {
+            "name" : "langCode",
+            "type" : "string"
+          }, {
+            "name" : "text",
+            "type" : "string"
+          } ]
+        }
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DatabaseChangelogLock",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "locked",
+      "type" : "boolean"
+    }, {
+      "name" : "lockGranted",
+      "type" : "string"
+    }, {
+      "name" : "lockedBy",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DatabaseChangelog",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "tag",
+      "type" : "string"
+    }, {
+      "name" : "author",
+      "type" : "string"
+    }, {
+      "name" : "dateExecuted",
+      "type" : "string"
+    }, {
+      "name" : "md5Sum",
+      "type" : "boolean"
+    }, {
+      "name" : "moduleName",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Model",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Blob",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "blobValue",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Clob",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "clobValue",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RevisionChangeSet",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "serializedChangeSet",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "PrimitiveArrayType",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "attributeName",
+      "type" : "string"
+    }, {
+      "name" : "orderIndex",
+      "type" : "int"
+    }, {
+      "name" : "longType",
+      "type" : "string"
+    }, {
+      "name" : "stringType",
+      "type" : "string"
+    }, {
+      "name" : "dateType",
+      "type" : "string"
+    }, {
+      "name" : "booleanType",
+      "type" : "string"
+    }, {
+      "name" : "integerType",
+      "type" : "string"
+    }, {
+      "name" : "decimalType",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Event",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "clientId",
+      "type" : "string"
+    }, {
+      "name" : "locale",
+      "type" : "string"
+    }, {
+      "name" : "result",
+      "type" : "EventResult"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ModelAssociation",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "orderIndex",
+      "type" : "int"
+    }, {
+      "name" : "parentModelType",
+      "type" : "string"
+    }, {
+      "name" : "parentModelId",
+      "type" : "string"
+    }, {
+      "name" : "childModelId",
+      "type" : "string"
+    }, {
+      "name" : "discriminator",
+      "type" : "string"
+    }, {
+      "name" : "attributeType",
+      "type" : "string"
+    }, {
+      "name" : "attributeName",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Namespace",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Module",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "metamodel",
+      "type" : "string"
+    }, {
+      "name" : "ns",
+      "type" : "Namespace"
+    }, {
+      "name" : "version",
+      "type" : "string"
+    }, {
+      "name" : "artifacts",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "Artifact",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "Id",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "createdBy",
+            "type" : "string"
+          }, {
+            "name" : "modifiedBy",
+            "type" : "string"
+          }, {
+            "name" : "branchId",
+            "type" : "string"
+          }, {
+            "name" : "repositoryId",
+            "type" : "string"
+          }, {
+            "name" : "active",
+            "type" : "boolean"
+          }, {
+            "name" : "createdOn",
+            "type" : "string"
+          }, {
+            "name" : "modifiedOn",
+            "type" : "string"
+          }, {
+            "name" : "revision",
+            "type" : "string"
+          }, {
+            "name" : "parentRevision",
+            "type" : "string"
+          }, {
+            "name" : "concreteModelType",
+            "type" : "string"
+          }, {
+            "name" : "businessDateFrom",
+            "type" : "string"
+          }, {
+            "name" : "businessDateTo",
+            "type" : "string"
+          }, {
+            "name" : "temporalModelId",
+            "type" : "string"
+          }, {
+            "name" : "templateId",
+            "type" : "string"
+          }, {
+            "name" : "metamodel",
+            "type" : "string"
+          }, {
+            "name" : "ns",
+            "type" : "Namespace"
+          }, {
+            "name" : "artifactType",
+            "type" : {
+              "type" : "enum",
+              "name" : "ArtifactType",
+              "symbols" : [ "DEPRECATED", "DOMAIN_MODEL", "FUNCTION_MODEL", "CONSTRAINT_MODEL", "DIAGRAM_MODEL", "MASTER_CHANGE_LOG", "TEMPLATE_MODEL", "XMI_MODEL", "DB_MODEL", "ZCHANGELOG", "ZSERVICE", "ZWORKFLOW", "ZENUM", "ZEVENT", "ZVIEW", "ZNLS", "ZRESOURCE", "ZEVENT_RESULT", "ZBPMN", "ECORE_MODEL", "XSD_MODEL", "WSDL_MODEL", "ZTEST" ]
+            }
+          } ]
+        }
+      }
+    }, {
+      "name" : "descriptiveName",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "BlobArtifact",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "metamodel",
+      "type" : "string"
+    }, {
+      "name" : "ns",
+      "type" : "Namespace"
+    }, {
+      "name" : "artifactType",
+      "type" : "ArtifactType"
+    }, {
+      "name" : "blobReference",
+      "type" : "Blob"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ClobArtifact",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "metamodel",
+      "type" : "string"
+    }, {
+      "name" : "ns",
+      "type" : "Namespace"
+    }, {
+      "name" : "artifactType",
+      "type" : "ArtifactType"
+    }, {
+      "name" : "clobReference",
+      "type" : "Clob"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RevisionBranch",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "root",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "branchPath",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "parentBranchId",
+      "type" : "string"
+    }, {
+      "name" : "catalogUser",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "lo",
+      "type" : "string"
+    }, {
+      "name" : "hi",
+      "type" : "string"
+    }, {
+      "name" : "workflowStatus",
+      "type" : {
+        "type" : "enum",
+        "name" : "WorkflowStatus",
+        "symbols" : [ "DRAFT", "WORKFLOW_INITIATED", "WORKFLOW_IN_PROGRESS", "WORKFLOW_REWORK", "WORKFLOW_COMPLETE", "WORKFLOW_SUSPENDED", "WORKFLOW_MERGE_QUEUED", "WORKFLOW_REVIEW" ]
+      }
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "workflowId",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "workflowType",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "enum",
+    "name" : "RepositoryType",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "DESIGN", "DEFINITION", "INSTANCE" ]
+  }, {
+    "type" : "record",
+    "name" : "Repository",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "repositoryType",
+      "type" : "RepositoryType"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "maxRevision",
+      "type" : "string"
+    }, {
+      "name" : "owner",
+      "type" : "string"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RevisionNumber",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "revisionComment",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "CatalogUser",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "currentBranch",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "AssociationCriteria",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "searchedModelId",
+      "type" : "string"
+    }, {
+      "name" : "searchedModelType",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "branchRoot",
+      "type" : "int"
+    }, {
+      "name" : "templateAttribute",
+      "type" : "string"
+    }, {
+      "name" : "descSortOn",
+      "type" : "string"
+    }, {
+      "name" : "fields",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    }, {
+      "name" : "sortOn",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    }, {
+      "name" : "descendingOrder",
+      "type" : "boolean"
+    }, {
+      "name" : "paged",
+      "type" : "boolean"
+    }, {
+      "name" : "snapshot",
+      "type" : "boolean"
+    }, {
+      "name" : "getListSize",
+      "type" : "boolean"
+    }, {
+      "name" : "getPage",
+      "type" : "boolean"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "associatedOnOrAfterBusinessDate",
+      "type" : "string"
+    }, {
+      "name" : "associatedOnOrBeforeBusinessDate",
+      "type" : "string"
+    }, {
+      "name" : "predicates",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "Predicate",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "predicateType",
+            "type" : {
+              "type" : "enum",
+              "name" : "PredicateType",
+              "symbols" : [ "BETWEEN", "EQ", "GE", "GT", "LE", "LT", "IN", "LIKE" ]
+            }
+          }, {
+            "name" : "value",
+            "type" : "string"
+          }, {
+            "name" : "values",
+            "type" : {
+              "type" : "array",
+              "items" : "string"
+            }
+          }, {
+            "name" : "ignoreCase",
+            "type" : "boolean"
+          } ]
+        }
+      }
+    }, {
+      "name" : "includeInactive",
+      "type" : "boolean"
+    }, {
+      "name" : "referenceSearch",
+      "type" : "boolean"
+    }, {
+      "name" : "getTemporalRange",
+      "type" : "boolean"
+    }, {
+      "name" : "sameBranchOnly",
+      "type" : "boolean"
+    }, {
+      "name" : "locale",
+      "type" : "string"
+    }, {
+      "name" : "childType",
+      "type" : "string"
+    }, {
+      "name" : "childAttributeName",
+      "type" : "string"
+    }, {
+      "name" : "depth",
+      "type" : "int"
+    }, {
+      "name" : "relationInverted",
+      "type" : "boolean"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ParentChildWithAssociationResult",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "parent",
+      "type" : "Model"
+    }, {
+      "name" : "children",
+      "type" : {
+        "type" : "array",
+        "items" : "Model"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Paginator",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "currentPage",
+      "type" : "int"
+    }, {
+      "name" : "numberOfPages",
+      "type" : "int"
+    }, {
+      "name" : "numberOfRecords",
+      "type" : "int"
+    }, {
+      "name" : "pageSize",
+      "type" : "int"
+    }, {
+      "name" : "pageOffset",
+      "type" : "string"
+    }, {
+      "name" : "initialized",
+      "type" : "boolean"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Criteria",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "searchedModelId",
+      "type" : "string"
+    }, {
+      "name" : "searchedModelType",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "branchRoot",
+      "type" : "int"
+    }, {
+      "name" : "templateAttribute",
+      "type" : "string"
+    }, {
+      "name" : "descSortOn",
+      "type" : "string"
+    }, {
+      "name" : "fields",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    }, {
+      "name" : "sortOn",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    }, {
+      "name" : "descendingOrder",
+      "type" : "boolean"
+    }, {
+      "name" : "paged",
+      "type" : "boolean"
+    }, {
+      "name" : "snapshot",
+      "type" : "boolean"
+    }, {
+      "name" : "getListSize",
+      "type" : "boolean"
+    }, {
+      "name" : "getPage",
+      "type" : "boolean"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "associatedOnOrAfterBusinessDate",
+      "type" : "string"
+    }, {
+      "name" : "associatedOnOrBeforeBusinessDate",
+      "type" : "string"
+    }, {
+      "name" : "predicates",
+      "type" : {
+        "type" : "array",
+        "items" : "Predicate"
+      }
+    }, {
+      "name" : "includeInactive",
+      "type" : "boolean"
+    }, {
+      "name" : "referenceSearch",
+      "type" : "boolean"
+    }, {
+      "name" : "getTemporalRange",
+      "type" : "boolean"
+    }, {
+      "name" : "sameBranchOnly",
+      "type" : "boolean"
+    }, {
+      "name" : "locale",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "PaginatedModel",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "criteria",
+      "type" : "Criteria"
+    }, {
+      "name" : "models",
+      "type" : {
+        "type" : "array",
+        "items" : "Model"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RevisionTag",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "tag",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Constraint",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "RuntimeMetamodel",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "module",
+      "type" : "Module"
+    }, {
+      "name" : "serializedEPackages",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ]
+  }, {
+    "type" : "enum",
+    "name" : "ChangeKind",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "SET", "ADD", "MOVE", "REMOVE" ]
+  }, {
+    "type" : "record",
+    "name" : "ListChange",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "orderIndex",
+      "type" : "int"
+    }, {
+      "name" : "parentModelType",
+      "type" : "string"
+    }, {
+      "name" : "parentModelId",
+      "type" : "string"
+    }, {
+      "name" : "childModelId",
+      "type" : "string"
+    }, {
+      "name" : "discriminator",
+      "type" : "string"
+    }, {
+      "name" : "attributeType",
+      "type" : "string"
+    }, {
+      "name" : "attributeName",
+      "type" : "string"
+    }, {
+      "name" : "changeKind",
+      "type" : "ChangeKind"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ReferenceChange",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "orderIndex",
+      "type" : "int"
+    }, {
+      "name" : "parentModelType",
+      "type" : "string"
+    }, {
+      "name" : "parentModelId",
+      "type" : "string"
+    }, {
+      "name" : "childModelId",
+      "type" : "string"
+    }, {
+      "name" : "discriminator",
+      "type" : "string"
+    }, {
+      "name" : "attributeType",
+      "type" : "string"
+    }, {
+      "name" : "attributeName",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "FrameworkModelChangeSet",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "updatedModels",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "AbstractModel",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          } ]
+        }
+      }
+    }, {
+      "name" : "listChanges",
+      "type" : {
+        "type" : "array",
+        "items" : "ListChange"
+      }
+    }, {
+      "name" : "referenceChanges",
+      "type" : {
+        "type" : "array",
+        "items" : "ReferenceChange"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ModelChangeSet",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "updatedModels",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "ModelChange",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "changeModelId",
+            "type" : "string"
+          }, {
+            "name" : "changeModelType",
+            "type" : "string"
+          }, {
+            "name" : "attributeChanges",
+            "type" : {
+              "type" : "array",
+              "items" : {
+                "type" : "record",
+                "name" : "AbstractModelChange",
+                "fields" : [ {
+                  "name" : "modelId",
+                  "type" : "string"
+                }, {
+                  "name" : "modelType",
+                  "type" : "string"
+                }, {
+                  "name" : "attributeName",
+                  "type" : "string"
+                } ]
+              }
+            }
+          } ]
+        }
+      }
+    }, {
+      "name" : "deletedModels",
+      "type" : {
+        "type" : "array",
+        "items" : "ModelChange"
+      }
+    }, {
+      "name" : "userId",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ModelListChange",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "attributeName",
+      "type" : "string"
+    }, {
+      "name" : "modelListValueChanges",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "ModelListValueChange",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "oldPosition",
+            "type" : "string"
+          }, {
+            "name" : "position",
+            "type" : "string"
+          }, {
+            "name" : "changeKind",
+            "type" : "ChangeKind"
+          }, {
+            "name" : "oldValue",
+            "type" : "ModelIdReferenceType"
+          }, {
+            "name" : "newValue",
+            "type" : "ModelIdReferenceType"
+          }, {
+            "name" : "attributeType",
+            "type" : "string"
+          } ]
+        }
+      }
+    } ]
+  }, {
+    "type" : "enum",
+    "name" : "ViolationStatus",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "UNIQUE_VIOLATION", "DELETE_VIOLATION", "LENGTH_VIOLATION", "CONSTRAINT_VIOLATION", "TEMPORAL_VIOLATION" ]
+  }, {
+    "type" : "record",
+    "name" : "ConstraintViolation",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "modelIdReference",
+      "type" : "string"
+    }, {
+      "name" : "modelTypeReference",
+      "type" : "string"
+    }, {
+      "name" : "constraintName",
+      "type" : "string"
+    }, {
+      "name" : "attributeNames",
+      "type" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    }, {
+      "name" : "znlsName",
+      "type" : "string"
+    }, {
+      "name" : "violationStatus",
+      "type" : "ViolationStatus"
+    }, {
+      "name" : "placeholders",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "Placeholder",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "value",
+            "type" : "string"
+          } ]
+        }
+      }
+    } ]
+  }, {
+    "type" : "enum",
+    "name" : "AlertPriority",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "LOW", "MEDIUM", "HIGH" ]
+  }, {
+    "type" : "enum",
+    "name" : "AlertType",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "EMAIL", "SMS", "WORKFLOW" ]
+  }, {
+    "type" : "enum",
+    "name" : "TextFormat",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "PLAIN", "HTML" ]
+  }, {
+    "type" : "record",
+    "name" : "Alert",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "alertCode",
+      "type" : "string"
+    }, {
+      "name" : "alertPriority",
+      "type" : "AlertPriority"
+    }, {
+      "name" : "alertSubject",
+      "type" : "string"
+    }, {
+      "name" : "alertBody",
+      "type" : "string"
+    }, {
+      "name" : "alertFrom",
+      "type" : "string"
+    }, {
+      "name" : "alertTo",
+      "type" : "string"
+    }, {
+      "name" : "alertCc",
+      "type" : "string"
+    }, {
+      "name" : "alertBcc",
+      "type" : "string"
+    }, {
+      "name" : "alertFormat",
+      "type" : "TextFormat"
+    }, {
+      "name" : "alertType",
+      "type" : "AlertType"
+    }, {
+      "name" : "processed",
+      "type" : "boolean"
+    }, {
+      "name" : "processedOn",
+      "type" : "string"
+    }, {
+      "name" : "errorCode",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ScheduledEventConfiguration",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "daysToComplete",
+      "type" : "int"
+    }, {
+      "name" : "eventModelType",
+      "type" : "string"
+    }, {
+      "name" : "targetModelId",
+      "type" : "string"
+    }, {
+      "name" : "targetModelType",
+      "type" : "string"
+    }, {
+      "name" : "recurring",
+      "type" : "boolean"
+    }, {
+      "name" : "cronExpression",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ScheduledEventTrigger",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "triggerDate",
+      "type" : "string"
+    }, {
+      "name" : "mustCompleteBy",
+      "type" : "string"
+    }, {
+      "name" : "scheduledEventConfigModelId",
+      "type" : "string"
+    }, {
+      "name" : "scheduledEventModelId",
+      "type" : "string"
+    }, {
+      "name" : "eventModelType",
+      "type" : "string"
+    }, {
+      "name" : "targetModelId",
+      "type" : "string"
+    }, {
+      "name" : "targetModelType",
+      "type" : "string"
+    }, {
+      "name" : "triggered",
+      "type" : "boolean"
+    }, {
+      "name" : "completed",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "processingFlag",
+      "type" : "int"
+    }, {
+      "name" : "processErrorText",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "PlaceholderParameters",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "placeholderSets",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "PlaceholderSet",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "placeholders",
+            "type" : {
+              "type" : "array",
+              "items" : "Placeholder"
+            }
+          } ]
+        }
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "TemporalModel",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "revisionRanges",
+      "type" : {
+        "type" : "array",
+        "items" : "Model"
+      }
+    }, {
+      "name" : "futureRanges",
+      "type" : {
+        "type" : "array",
+        "items" : "Model"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ChangeSetTriggerEventResult",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "eventStatus",
+      "type" : "EventStatus"
+    }, {
+      "name" : "message",
+      "type" : "string"
+    }, {
+      "name" : "updatedChangeSet",
+      "type" : "ModelChangeSet"
+    }, {
+      "name" : "errors",
+      "type" : {
+        "type" : "array",
+        "items" : "Placeholder"
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "ChangeSetTriggerEvent",
+    "namespace" : "com.zafin.models.avro1",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "clientId",
+      "type" : "string"
+    }, {
+      "name" : "locale",
+      "type" : "string"
+    }, {
+      "name" : "result",
+      "type" : "EventResult"
+    }, {
+      "name" : "triggerModelId",
+      "type" : "string"
+    }, {
+      "name" : "triggerModelType",
+      "type" : "string"
+    }, {
+      "name" : "currentChangeSet",
+      "type" : "ModelChangeSet"
+    } ]
+  }, {
+    "type" : "enum",
+    "name" : "ChangeSetTransformerError",
+    "namespace" : "com.zafin.models.avro1",
+    "symbols" : [ "FILE_CORRUPT", "UNKOWN_FILE_TYPE", "UNKOWN_FILE_CONTENT", "FILE_CONTENT_CORRUPT", "FILE_CONTENT_UNSUPPORTED", "FILE_CONTENT_INVALID", "UNKNOWN_MODEL_TYPE", "MODEL_INSTANCE_NOT_IN_REPOSITORY", "MODEL_TYPE_ATTRIBUTE_DEPRECATED", "MODEL_TYPE_ATTRIBUTE_UNSUPPORTED", "PROCESSING_ERROR" ]
+  }, {
+    "type" : "enum",
+    "name" : "DecisionTableValidationRule",
+    "namespace" : "com.zafin.decisiontable.avro",
+    "symbols" : [ "NO_VALIDATION", "NO_GAP", "NO_OVERLAP", "NO_DUPLICATION" ]
+  }, {
+    "type" : "enum",
+    "name" : "DecisionTableOperator",
+    "namespace" : "com.zafin.decisiontable.avro",
+    "symbols" : [ "EQUAL_TO", "NOT_EQUAL_TO", "LESS_THAN", "GREATER_THAN", "LESS_THAN_OR_EQUAL_TO", "GREATER_THAN_OR_EQUAL_TO", "CONTAINS", "NOT_CONTAINS", "IN", "NOT_IN", "BETWEEN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "type" : "enum",
+    "name" : "DecisionTableDataType",
+    "namespace" : "com.zafin.decisiontable.avro",
+    "symbols" : [ "NUMBER", "DECIMAL", "DATE", "STRING", "BOOLEAN", "MODEL_REFERENCE", "NUMBER_ARRAY", "DECIMAL_ARRAY", "DATE_ARRAY", "STRING_ARRAY", "BOOLEAN_ARRAY", "MODEL_REFERENCE_ARRAY" ]
+  }, {
+    "type" : "record",
+    "name" : "DecisionTableConfig",
+    "namespace" : "com.zafin.decisiontable.avro",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "decisionTableType",
+      "type" : "string"
+    }, {
+      "name" : "conditionModelName",
+      "type" : "string"
+    }, {
+      "name" : "actionModelName",
+      "type" : "string"
+    }, {
+      "name" : "isSingleReturn",
+      "type" : "boolean"
+    }, {
+      "name" : "columns",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "DecisionTableColumnConfig",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "Id",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "createdBy",
+            "type" : "string"
+          }, {
+            "name" : "modifiedBy",
+            "type" : "string"
+          }, {
+            "name" : "branchId",
+            "type" : "string"
+          }, {
+            "name" : "repositoryId",
+            "type" : "string"
+          }, {
+            "name" : "active",
+            "type" : "boolean"
+          }, {
+            "name" : "createdOn",
+            "type" : "string"
+          }, {
+            "name" : "modifiedOn",
+            "type" : "string"
+          }, {
+            "name" : "revision",
+            "type" : "string"
+          }, {
+            "name" : "parentRevision",
+            "type" : "string"
+          }, {
+            "name" : "concreteModelType",
+            "type" : "string"
+          }, {
+            "name" : "businessDateFrom",
+            "type" : "string"
+          }, {
+            "name" : "businessDateTo",
+            "type" : "string"
+          }, {
+            "name" : "temporalModelId",
+            "type" : "string"
+          }, {
+            "name" : "templateId",
+            "type" : "string"
+          }, {
+            "name" : "isCondition",
+            "type" : "boolean"
+          }, {
+            "name" : "attributeName",
+            "type" : "string"
+          }, {
+            "name" : "operator",
+            "type" : "DecisionTableOperator"
+          }, {
+            "name" : "dataType",
+            "type" : "DecisionTableDataType"
+          }, {
+            "name" : "decimalScale",
+            "type" : "long"
+          }, {
+            "name" : "decimalPrecision",
+            "type" : "long"
+          }, {
+            "name" : "stringLength",
+            "type" : "long"
+          }, {
+            "name" : "stringFormat",
+            "type" : "string"
+          }, {
+            "name" : "validationRule",
+            "type" : {
+              "type" : "array",
+              "items" : "DecisionTableValidationRule"
+            }
+          }, {
+            "name" : "defaultValue",
+            "type" : {
+              "type" : "record",
+              "name" : "DecisionTableValue",
+              "fields" : [ {
+                "name" : "modelId",
+                "type" : "string"
+              }, {
+                "name" : "modelType",
+                "type" : "string"
+              }, {
+                "name" : "Id",
+                "type" : "string"
+              }, {
+                "name" : "name",
+                "type" : "string"
+              }, {
+                "name" : "description",
+                "type" : "string"
+              }, {
+                "name" : "createdBy",
+                "type" : "string"
+              }, {
+                "name" : "modifiedBy",
+                "type" : "string"
+              }, {
+                "name" : "branchId",
+                "type" : "string"
+              }, {
+                "name" : "repositoryId",
+                "type" : "string"
+              }, {
+                "name" : "active",
+                "type" : "boolean"
+              }, {
+                "name" : "createdOn",
+                "type" : "string"
+              }, {
+                "name" : "modifiedOn",
+                "type" : "string"
+              }, {
+                "name" : "revision",
+                "type" : "string"
+              }, {
+                "name" : "parentRevision",
+                "type" : "string"
+              }, {
+                "name" : "concreteModelType",
+                "type" : "string"
+              }, {
+                "name" : "businessDateFrom",
+                "type" : "string"
+              }, {
+                "name" : "businessDateTo",
+                "type" : "string"
+              }, {
+                "name" : "temporalModelId",
+                "type" : "string"
+              }, {
+                "name" : "templateId",
+                "type" : "string"
+              }, {
+                "name" : "numberValue",
+                "type" : "long"
+              }, {
+                "name" : "decimalValue",
+                "type" : "string"
+              }, {
+                "name" : "dateValue",
+                "type" : "string"
+              }, {
+                "name" : "stringValue",
+                "type" : "string"
+              }, {
+                "name" : "booleanValue",
+                "type" : "boolean"
+              }, {
+                "name" : "zmodelId",
+                "type" : "string"
+              }, {
+                "name" : "zmodelType",
+                "type" : "string"
+              } ]
+            }
+          }, {
+            "name" : "constraintValueList",
+            "type" : {
+              "type" : "array",
+              "items" : "DecisionTableValue"
+            }
+          } ]
+        }
+      }
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "DecisionTable",
+    "namespace" : "com.zafin.decisiontable.avro",
+    "fields" : [ {
+      "name" : "modelId",
+      "type" : "string"
+    }, {
+      "name" : "modelType",
+      "type" : "string"
+    }, {
+      "name" : "Id",
+      "type" : "string"
+    }, {
+      "name" : "name",
+      "type" : "string"
+    }, {
+      "name" : "description",
+      "type" : "string"
+    }, {
+      "name" : "createdBy",
+      "type" : "string"
+    }, {
+      "name" : "modifiedBy",
+      "type" : "string"
+    }, {
+      "name" : "branchId",
+      "type" : "string"
+    }, {
+      "name" : "repositoryId",
+      "type" : "string"
+    }, {
+      "name" : "active",
+      "type" : "boolean"
+    }, {
+      "name" : "createdOn",
+      "type" : "string"
+    }, {
+      "name" : "modifiedOn",
+      "type" : "string"
+    }, {
+      "name" : "revision",
+      "type" : "string"
+    }, {
+      "name" : "parentRevision",
+      "type" : "string"
+    }, {
+      "name" : "concreteModelType",
+      "type" : "string"
+    }, {
+      "name" : "businessDateFrom",
+      "type" : "string"
+    }, {
+      "name" : "businessDateTo",
+      "type" : "string"
+    }, {
+      "name" : "temporalModelId",
+      "type" : "string"
+    }, {
+      "name" : "templateId",
+      "type" : "string"
+    }, {
+      "name" : "config",
+      "type" : "DecisionTableConfig"
+    }, {
+      "name" : "rows",
+      "type" : {
+        "type" : "array",
+        "items" : {
+          "type" : "record",
+          "name" : "DecisionTableRow",
+          "fields" : [ {
+            "name" : "modelId",
+            "type" : "string"
+          }, {
+            "name" : "modelType",
+            "type" : "string"
+          }, {
+            "name" : "Id",
+            "type" : "string"
+          }, {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "createdBy",
+            "type" : "string"
+          }, {
+            "name" : "modifiedBy",
+            "type" : "string"
+          }, {
+            "name" : "branchId",
+            "type" : "string"
+          }, {
+            "name" : "repositoryId",
+            "type" : "string"
+          }, {
+            "name" : "active",
+            "type" : "boolean"
+          }, {
+            "name" : "createdOn",
+            "type" : "string"
+          }, {
+            "name" : "modifiedOn",
+            "type" : "string"
+          }, {
+            "name" : "revision",
+            "type" : "string"
+          }, {
+            "name" : "parentRevision",
+            "type" : "string"
+          }, {
+            "name" : "concreteModelType",
+            "type" : "string"
+          }, {
+            "name" : "businessDateFrom",
+            "type" : "string"
+          }, {
+            "name" : "businessDateTo",
+            "type" : "string"
+          }, {
+            "name" : "temporalModelId",
+            "type" : "string"
+          }, {
+            "name" : "templateId",
+            "type" : "string"
+          }, {
+            "name" : "cells",
+            "type" : {
+              "type" : "array",
+              "items" : {
+                "type" : "record",
+                "name" : "DecisionTableCell",
+                "fields" : [ {
+                  "name" : "modelId",
+                  "type" : "string"
+                }, {
+                  "name" : "modelType",
+                  "type" : "string"
+                }, {
+                  "name" : "Id",
+                  "type" : "string"
+                }, {
+                  "name" : "name",
+                  "type" : "string"
+                }, {
+                  "name" : "description",
+                  "type" : "string"
+                }, {
+                  "name" : "createdBy",
+                  "type" : "string"
+                }, {
+                  "name" : "modifiedBy",
+                  "type" : "string"
+                }, {
+                  "name" : "branchId",
+                  "type" : "string"
+                }, {
+                  "name" : "repositoryId",
+                  "type" : "string"
+                }, {
+                  "name" : "active",
+                  "type" : "boolean"
+                }, {
+                  "name" : "createdOn",
+                  "type" : "string"
+                }, {
+                  "name" : "modifiedOn",
+                  "type" : "string"
+                }, {
+                  "name" : "revision",
+                  "type" : "string"
+                }, {
+                  "name" : "parentRevision",
+                  "type" : "string"
+                }, {
+                  "name" : "concreteModelType",
+                  "type" : "string"
+                }, {
+                  "name" : "businessDateFrom",
+                  "type" : "string"
+                }, {
+                  "name" : "businessDateTo",
+                  "type" : "string"
+                }, {
+                  "name" : "temporalModelId",
+                  "type" : "string"
+                }, {
+                  "name" : "templateId",
+                  "type" : "string"
+                }, {
+                  "name" : "isApplicable",
+                  "type" : "boolean"
+                }, {
+                  "name" : "columnConfig",
+                  "type" : "DecisionTableColumnConfig"
+                }, {
+                  "name" : "values",
+                  "type" : {
+                    "type" : "array",
+                    "items" : "DecisionTableValue"
+                  }
+                } ]
+              }
+            }
+          } ]
+        }
+      }
+    } ]
+  } ],
+   "messages": {
+     "send": {
+         "request": [{"name": "alert", "type": "com.zafin.models.avro1.Alert"}],
+         "response": "string"
+     }
+ }
+}

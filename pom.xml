@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <avro.version>1.8.2</avro.version>
+        <emf.version>2.12.0</emf.version>
+        <scala.version>2.12</scala.version>
+        <io.grpc.version>1.16.1</io.grpc.version>
+        <os-maven-plugin.version>1.6.1</os-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <io.grpc.version>1.16.1</io.grpc.version>
+        <os-maven-plugin.version>1.6.1</os-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <junit.version>4.12</junit.version>
+        <protobuf.version>3.3.0</protobuf.version>
+        <netty.version>1.9.0</netty.version>
+    </properties>
+    
+    <groupId>com.zafin.zplatform</groupId>
+    <artifactId>z-proto</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>z-proto</name>
+    <packaging>pom</packaging>
+    <modules>
+	   <module>z-api</module>
+	   <module>z-service</module>
+	   <module>z-extract</module>
+	   <module>z-proto-revisions</module>
+        <module>z-spring</module>
+    </modules>
+    
+   <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
