@@ -19,7 +19,7 @@ Z-API project: Supplies the following
 Z-SERVICE project: The z-api implementation classes
 
 Z-PLAT-PROTO-ZRPE1 project:
-  Revision 1 of Zrpe protocol (which can be derived anythin: in this case transformed from ecore/genmodel)
+  Revision 1 of Zrpe protocol (which can be derived from anything: in this case, transformed from ecore/genmodel)
 
 Z-PLAT-PROTO-ZRPE2 project:
   Revision 2 of Zrpe protocol (Exammple of Schema change: added description2 to alert record)
