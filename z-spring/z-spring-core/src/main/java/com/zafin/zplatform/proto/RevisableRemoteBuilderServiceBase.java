@@ -63,7 +63,7 @@ public class RevisableRemoteBuilderServiceBase<T,B> implements RevisableBuilderS
 
     @Override
     public T build(PayLoad payLoad, Builder<T, B> builder) throws BuilderServiceException {
-        return builder.buildFrom(payLoad);
+        return builder.feedMe(payLoad).build();
     }
 
     @Override

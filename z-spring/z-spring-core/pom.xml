@@ -3,10 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.zafin.zplatform</groupId>
-        <artifactId>z-proto</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
     </parent>
 
     <artifactId>z-spring-core</artifactId>
@@ -18,36 +17,8 @@
 
     <dependencies>   
         <dependency>
-            <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency> 
-        <dependency>
-            <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency> 
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.4.RELEASE</version>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <version>1.4.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-            <version>1.4.3.RELEASE</version>
         </dependency>
     </dependencies>
-
 </project>

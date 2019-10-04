@@ -11,7 +11,8 @@ package com.zafin.zplatform.proto;
 * 
 **/
 public interface Builder<T,B> extends Cloneable {
-    T buildFrom(PayLoad payload)  throws BuilderServiceException;
+    Builder<T,B> feedMe(PayLoad payload)  throws BuilderServiceException;
+    T build();
     B createNewNativeBuilder();
     BuilderPopulator<T,B> getBuilderPopulator();
     Builder<T,B> getPreviousBuilder();

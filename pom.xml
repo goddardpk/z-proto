@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
+        <maven.version>3.5.0</maven.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +20,8 @@
         <junit.version>4.12</junit.version>
         <protobuf.version>3.3.0</protobuf.version>
         <netty.version>1.9.0</netty.version>
+        <z.proto.spec.version>1.0</z.proto.spec.version>
+        <z.proto.implementation.version>1.0-SNAPSHOT</z.proto.implementation.version>
     </properties>
     
     <groupId>com.zafin.zplatform</groupId>

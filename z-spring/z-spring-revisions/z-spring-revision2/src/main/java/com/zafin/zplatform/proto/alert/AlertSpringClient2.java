@@ -1,17 +1,17 @@
 package com.zafin.zplatform.proto.alert;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import com.zafin.zplatform.proto.Builder;
 import com.zafin.zplatform.proto.BuilderServiceException;
 import com.zafin.zplatform.proto.Client;
 import com.zafin.zplatform.proto.ClientBase;
 import com.zafin.zplatform.proto.PayLoad;
-import com.zafin.zplatform.proto.SpringServiceRegistryEntry;
 import com.zafin.zplatform.proto.service.AlertService;
-import com.zafin.zplatform.proto.service.StartupArgs;
 
 public class AlertSpringClient2<T, B> extends ClientBase<T, B> {
     
@@ -19,12 +19,15 @@ public class AlertSpringClient2<T, B> extends ClientBase<T, B> {
     @Autowired
     private PayLoad testPayLoad;
 
-    @Autowired
+    //@Autowired
     private AlertService<T, B> alertService;
 
     @Autowired
     private Builder<T, B> builder;
 
+    public AlertSpringClient2() {
+        System.out.println("Running [" + getClass().getSimpleName() + "]...");
+    }
     @Override
     public Class<?> getSupportedClient() {
         return AlertSpringClient2.class;
@@ -35,15 +38,20 @@ public class AlertSpringClient2<T, B> extends ClientBase<T, B> {
         return alertService.build(payload, builder);
     }
 
-    public static void main(String[] args) throws BuilderServiceException, ClassNotFoundException {
+    @SpringBootApplication
+    public static class TestSpring2 {
+        public static void main(String[] args) throws ClassNotFoundException, BuilderServiceException {
+            String[] testArgs = {"debug=true"};
+            Class<?> app = TestSpring2.class;
+            System.out.println(TestSpring2.class.getSimpleName() + ":  Running: " + app.getSimpleName());
+            ApplicationContext ctx = SpringApplication.run(app, testArgs);
+            AlertSpringClient2.test(ctx);
+        }
+    }
+    
+    public static void test(ApplicationContext context) throws BuilderServiceException, ClassNotFoundException {
         Client<?,?> client =  null;
-        SpringServiceRegistryEntry<?,?> registry = SpringServiceRegistryEntry.builder()
-                .setSpringConfig(AlertSpringConfig2.class.getCanonicalName())
-                .setSpringApplicationClass(AlertSpringClient2.class.getCanonicalName())
-                .setArgs(new StartupArgs(args))
-                .build();
-         registry.run();
-        client = registry.getBean("alertClient");
+        client = (Client<?,?>)context.getBean("alertClient");
         client.test();
     }
 

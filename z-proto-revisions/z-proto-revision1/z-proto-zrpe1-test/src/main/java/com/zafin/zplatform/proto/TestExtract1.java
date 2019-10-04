@@ -1,17 +1,12 @@
 package com.zafin.zplatform.proto;
 
-import static com.zafin.zplatform.proto.RevisionUtil.getRevisionFromClassName;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
 import com.zafin.zplatform.proto.service.StartupArgs;
 import com.zafin.zplatform.proto.alert.AlertSpringClient1;
-import com.zafin.zplatform.proto.alert.AlertSpringClient2;
 import com.zafin.zplatform.proto.alert.AlertSpringConfig1;
-import com.zafin.zplatform.proto.alert.AlertSpringConfig2;
 
 
 public class TestExtract1<T,B> {
@@ -33,12 +28,6 @@ public class TestExtract1<T,B> {
                 .getBean("alertClient");
     }
     
-    public Client<?,?> revision2SpringClient() {
-        return createService(AlertSpringConfig2.class.getCanonicalName(), 
-                AlertSpringClient2.class.getCanonicalName(),
-                AlertSpringConfig2.STARTUP_ARGS)
-                .getBean("alertClient");
-    }
     
     public List<TargetSystem> getMockTargetSystems(String targetName,Client<?,?> client) {
         List<TargetSystem> list = new ArrayList<>();
@@ -55,6 +44,10 @@ public class TestExtract1<T,B> {
             if (!canCreatePayLoad(client,mockTargets, mockChangeSet)) {
                 throw new IllegalStateException("Unable to create payload for target systems [" + mockTargets + "].");
             }
+    }
+    
+    public void regressionTest(PayLoad testPayload) throws BuilderServiceException {
+        testPayLoadWithClient1(testPayload);
     }
     
     public void assertFail(PayLoad stubData, Client<?,?> client) {
@@ -84,37 +77,18 @@ public class TestExtract1<T,B> {
         assertPass( decorate(testPayload), revision1SpringClient());
     }
     
-    protected void testPayLoadWithClient2(PayLoad testPayload) throws BuilderServiceException {
-        System.out.println("Test with client revision 2...");
-        assertPass(decorate(testPayload), revision2SpringClient());
-    }
-    public void regressionTest(PayLoad testPayload) throws BuilderServiceException {
-        testPayLoadWithClient1(testPayload);
-        testPayLoadWithClient2(testPayload);
-    }
     public void testExtractWith2ClientRevisions(StartupArgs args) throws BuilderServiceException {
         //TODO There must be a better way to preserve startup state used across configuration 
         //This (saving startup state) is a hack until a better solution avails itself.
         //This is bad because it ties tests to Spring configuration artifacts
         
         AlertSpringConfig1.STARTUP_ARGS = args;
-        AlertSpringConfig2.STARTUP_ARGS = args;
         
         System.out.println("Test Client (rev 1) with Alert Payload (rev 1)...");
         testPayLoadWithClient1(new AlertTestPayLoad1());
         System.out.println("Test Client (rev 1) with Alert Payload (rev 1) passed");
         
-        System.out.println("Test Client (rev 2) with Alert Payload (rev 2)...");
-        testPayLoadWithClient2(new AlertTestPayLoad2());
-        System.out.println("Test Client (rev 2) with Alert Payload (rev 2) passed");
         
-        System.out.println("Test Client (rev 2) with Alert Payload (rev 1)...");
-        testPayLoadWithClient2(new AlertTestPayLoad1());
-        System.out.println("Test Client (rev 2) with Alert Payload (rev 1) passed.");
-        
-        System.out.println("Test Client (rev 1) with Alert Payload (rev 2)...");
-        testPayLoadWithClient1(new AlertTestPayLoad2());
-        System.out.println("Test Client (rev 1) with Alert Payload (rev 2) passed");
         
     }
 }

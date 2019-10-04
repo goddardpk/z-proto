@@ -5,11 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.zplatform.proto.alert.AlertPayLoadFactory1;
-import com.zafin.zplatform.proto.alert.AlertPayLoadFactory2;
 import com.zafin.zplatform.proto.alert.AlertSpringConfig1;
-import com.zafin.zplatform.proto.alert.AlertSpringConfig2;
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
 import com.zafin.zplatform.proto.service.StartupArgs;
 
 /**
@@ -102,7 +99,6 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
        //This is bad because it ties tests to Spring configuration artifacts
        StartupArgs startupArgs = new StartupArgs(args);
        AlertSpringConfig1.STARTUP_ARGS = startupArgs;
-       AlertSpringConfig2.STARTUP_ARGS = startupArgs;
        
        //Test Missing Fields from revision 1 payload and factory
        System.out.println("Using alert (rev 1) payload...");
@@ -116,17 +112,5 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
        } else {
            System.out.println("Test passed.");
        }
-       //Test Missing Fields from revision 2 payload and factory
-       AlertPayLoadFactory2 alertPayLoadFactory2 = new AlertPayLoadFactory2();
-       AlertTestPayLoad2 alertTestPayLoad2 = new AlertTestPayLoad2();
-       fail = test(alertPayLoadFactory2, alertTestPayLoad2);
-
-       if (!fail) {
-           System.out.println("Test failed: Schema is out of sync with PayLoadFactory rev 2. Mandatory field defined in factory is not defined correctly in back-end schema definition.");
-           throw new IllegalStateException("Expected Builder Service Exception since mandatory field was missing.");
-       } else {
-           System.out.println("Test passed.");
-       }
-       
    }
 }

@@ -1,6 +1,5 @@
 package com.zafin.zplatform.proto;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.zafin.zplatform.proto.service.StartupArgs;
@@ -124,10 +123,13 @@ public class SpringServiceRegistryEntry<T,B> implements ServiceRegistry<T, B> {
         }
     }
     
-    public ApplicationContext run() throws ClassNotFoundException {
-        Class<?> application = Class.forName(registryKey.getSpringApplicationClass());
-        return SpringApplication.run(application, registryKey.args());
-    }
+//    public ApplicationContext run() throws ClassNotFoundException {
+//        System.out.println(this.getClass().getCanonicalName() + ".run()...");
+//        Class<?> application = Class.forName(registryKey.getSpringApplicationClass());
+//        Class<?> config = Class.forName(registryKey.getSpringConfig());
+//        return SpringApplication.run(config, registryKey.args());
+//        
+//    }
 
     /* (non-Javadoc)
      * @see com.zafin.zplatform.proto.ServiceRegistry#getBean(java.lang.String)

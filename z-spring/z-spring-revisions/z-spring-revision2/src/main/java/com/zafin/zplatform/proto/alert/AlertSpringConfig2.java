@@ -13,7 +13,6 @@ import com.zafin.models.avro2.Alert;
 import com.zafin.zplatform.proto.Builder;
 import com.zafin.zplatform.proto.BuilderBase;
 import com.zafin.zplatform.proto.BuilderPopulator;
-import com.zafin.zplatform.proto.BuilderServiceException;
 import com.zafin.zplatform.proto.Client;
 import com.zafin.zplatform.proto.ConfigurationProperties;
 import com.zafin.zplatform.proto.PayLoad;
@@ -36,6 +35,9 @@ public class AlertSpringConfig2<T,B> {
     
     private ConfigurationProperties config = new ConfigurationProperties(2);
     
+    public AlertSpringConfig2() {
+        System.out.println("Starting [" + this.getClass().getCanonicalName() + "]...");
+    }
     @Bean
     ServiceRegistry<T,B> serviceRegistry() throws ClassNotFoundException {
         @SuppressWarnings("unchecked")
@@ -43,27 +45,27 @@ public class AlertSpringConfig2<T,B> {
                 .setSpringConfig(AlertSpringConfig2.class.getCanonicalName())
                 .setArgs(STARTUP_ARGS)
                 .build();
-        registry.run();
         allRegisteredServices.put(registry.getRegistryKey(), registry);
         return registry;
     }
     @Bean
     Builder<T,B> builder() {
        return  new BuilderBase<T,B>(new AlertBuilderPopulator1<T,B>()) {
-            @SuppressWarnings("unchecked")
-            @Override
-            public T buildFrom(PayLoad payload) throws BuilderServiceException {
-                Alert.Builder nativeBuilder = (Alert.Builder)seedFrom(payload);
-                Alert alert = nativeBuilder.build();
-                return (T) alert;
-            }
+           //Hook to a specific a specific Alert (version 1)
+           @SuppressWarnings("unchecked")
+           @Override
+           public B createNewNativeBuilder() {
+               return builder = (B)Alert.newBuilder();
+           }
 
-            @SuppressWarnings("unchecked")
-            @Override
-            public B createNewNativeBuilder() {
-                return (B)Alert.newBuilder();
-            }
-        };
+           @SuppressWarnings("unchecked")
+           @Override
+           public T build() {
+               //Hook to a specific a specific Alert.Builder (version 1)
+               return (T) ((Alert.Builder) builder).build();
+           }
+       };
+
     }
     
     @Bean

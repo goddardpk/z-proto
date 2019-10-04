@@ -13,7 +13,6 @@ import com.zafin.models.avro1.Alert;
 import com.zafin.zplatform.proto.Builder;
 import com.zafin.zplatform.proto.BuilderBase;
 import com.zafin.zplatform.proto.BuilderPopulator;
-import com.zafin.zplatform.proto.BuilderServiceException;
 import com.zafin.zplatform.proto.ConfigurationProperties;
 import com.zafin.zplatform.proto.PayLoad;
 import com.zafin.zplatform.proto.PayLoadFactory;
@@ -32,15 +31,19 @@ public class AlertSpringConfig1<T, B> {
     private static final String ALERT_SERVICE = "AlertService";
 
     private ConfigurationProperties config = new ConfigurationProperties(1);
-
+    
+    public AlertSpringConfig1() {
+        System.out.println("Starting [" + this.getClass().getCanonicalName() + "]...");
+    }
+    
     @Bean
     ServiceRegistry<T,B> serviceRegistry() throws ClassNotFoundException {
+        System.out.println("Calling " + getClass().getSimpleName() + ".serviceRegistry()...");
         @SuppressWarnings("unchecked")
         SpringServiceRegistryEntry<T,B> registry = SpringServiceRegistryEntry.builder()
                 .setSpringConfig(AlertSpringConfig1.class.getCanonicalName())
                 .setArgs(STARTUP_ARGS)
                 .build();
-        registry.run();
         allRegisteredServices.put(registry.getRegistryKey(), registry);
         return registry;
     }
@@ -48,18 +51,17 @@ public class AlertSpringConfig1<T, B> {
     @Bean
     Builder<T,B> builder() {
        return  new BuilderBase<T,B>(new AlertBuilderPopulator1<T,B>()) {
-            @SuppressWarnings("unchecked")
-            @Override
-            public T buildFrom(PayLoad payload) throws BuilderServiceException {
-                Alert.Builder nativeBuilder = (Alert.Builder)seedFrom(payload);
-                Alert alert = nativeBuilder.build();
-                return (T) alert;
-            }
 
             @SuppressWarnings("unchecked")
             @Override
             public B createNewNativeBuilder() {
-                return (B)Alert.newBuilder();
+                return builder = (B)Alert.newBuilder();
+            }
+
+            @SuppressWarnings("unchecked")
+            @Override
+            public T build() {
+                return (T) ((Alert.Builder) builder).build();
             }
         };
     }
