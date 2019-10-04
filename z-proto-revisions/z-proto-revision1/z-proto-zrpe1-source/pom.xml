@@ -84,7 +84,7 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <goalPrefix>z-proto-zrpe1-ecore-avroo</goalPrefix>
+                    <goalPrefix>z-proto-zrpe1-ecore-avro</goalPrefix>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
                 <executions>

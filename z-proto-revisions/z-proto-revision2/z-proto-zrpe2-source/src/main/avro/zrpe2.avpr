@@ -1,5 +1,5 @@
 {
-  "protocol" : "Zrpe1",
+  "protocol" : "Zrpe2",
   "namespace" : "com.zafin.zplatform",
   "version" : "string",
   "types" : [ {

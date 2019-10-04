@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.zplatform.proto.alert.AlertPayLoadFactory2;
-import com.zafin.zplatform.proto.alert.AlertSpringConfig2;
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
 import com.zafin.zplatform.proto.service.StartupArgs;
 
@@ -98,7 +97,7 @@ public class TestMissingFieldExtract2<T,B> extends TestExtract2<T,B> {
        //This (saving startup state) is a hack until a better solution avails itself.
        //This is bad because it ties tests to Spring configuration artifacts
        StartupArgs startupArgs = new StartupArgs(args);
-       AlertSpringConfig2.STARTUP_ARGS = startupArgs;
+       //AlertSpringConfig2.STARTUP_ARGS = startupArgs;
        
        //Test Missing Fields from revision 1 payload and factory
        System.out.println("Using alert (rev 1) payload...");
