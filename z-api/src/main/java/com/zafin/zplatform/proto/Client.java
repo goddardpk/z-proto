@@ -1,5 +1,6 @@
 package com.zafin.zplatform.proto;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 /**
  * This Client does not care about transport technologies. (HTTP,Reactive,Rest,Soap,Blah)

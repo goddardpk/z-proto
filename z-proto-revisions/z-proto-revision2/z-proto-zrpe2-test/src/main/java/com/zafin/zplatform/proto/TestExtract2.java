@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.service.StartupArgs;
 
 public class TestExtract2<T,B> {

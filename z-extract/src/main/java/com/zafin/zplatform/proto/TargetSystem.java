@@ -2,6 +2,8 @@ package com.zafin.zplatform.proto;
 
 import java.util.List;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 public class TargetSystem {
     private final String name;
     private final TargetSystemChangeSetValidator validator;

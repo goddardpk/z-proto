@@ -1,4 +1,7 @@
 package com.zafin.zplatform.proto;
+
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 /**
  * There is a very simple API but there is very important separation of concern that
  * needs to be understood.
@@ -37,5 +40,11 @@ package com.zafin.zplatform.proto;
  * @param <B>
  */
 public interface BuilderPopulator<T,B> {
-    Builder<T,B> seedBuilder(PayLoad payload,Builder<T,B> builder) throws BuilderServiceException;
+    B seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
+    void setPreviousPopulator(BuilderPopulator<?,?> previous);
+    BuilderPopulator<?,?> getPreviousPopulator();
+    Object getBuilder();
+    void setBuilder(B builder);
+    TransferState<?,B> getTransferState();
+    PayLoad loadTestPayLoad(PayLoad payload);
 }

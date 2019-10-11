@@ -4,8 +4,11 @@ package com.zafin.zplatform.proto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zafin.models.avro1.Alert;
 import com.zafin.zplatform.proto.alert.AlertPayLoadFactory1;
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+import com.zafin.zplatform.proto.factory.PayLoadFactory;
 import com.zafin.zplatform.proto.service.StartupArgs;
 
 /**
@@ -13,12 +16,12 @@ import com.zafin.zplatform.proto.service.StartupArgs;
  * If a payload factory says a field is manadatory then the back-end schema process should fail when it 
  * tries to hydrate an object with 'missing' values.
  * 
- * @author root
+ * @author Paul Goddard
  *
  */
 public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
    
-   private final PayLoadFactory payLoadFactory;
+   private final PayLoadFactory<T> payLoadFactory;
    private final int missingFieldIndexToRemove;
    private MockChangeSet1 mockChangeSet = null;
    
@@ -28,12 +31,12 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
        sb.append("\nPayLoadFactory: " + payLoadFactory);
        sb.append("\nMissingFieldIndexToRemove: " + missingFieldIndexToRemove);
        sb.append("\nMockChangeSet: " + mockChangeSet);
-       String key = payLoadFactory.getAllMandatoryFields().get(missingFieldIndexToRemove);
+       String key = payLoadFactory.getAllFields().get(missingFieldIndexToRemove);
        sb.append("\nKey removed: " + key);
        return sb.toString();
    }
    
-   public TestMissingFieldExtract1(PayLoadFactory payLoadFactory, PayLoad testData, int missingFieldIndex) {
+   public TestMissingFieldExtract1(PayLoadFactory<T> payLoadFactory, PayLoad testData, int missingFieldIndex) {
        this.payLoadFactory = payLoadFactory;
        this.missingFieldIndexToRemove = missingFieldIndex;
    }
@@ -45,7 +48,7 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
    //Remove a mandatory field from testData
    @Override 
    public PayLoad decorate(PayLoad testData) {
-       String key = payLoadFactory.getAllMandatoryFields().get(missingFieldIndexToRemove);
+       String key = payLoadFactory.getAllFields().get(missingFieldIndexToRemove);
        if (key == null) {
            System.out.println("Warning: No key value at index: " + missingFieldIndexToRemove);
        }
@@ -55,9 +58,9 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
        return mockChangeSet;
    }
    
-   public static boolean test(PayLoadFactory payLoadFactory, PayLoad testPayLoad) throws BuilderServiceException {
+   public static boolean test(PayLoadFactory<Alert> payLoadFactory, PayLoad testPayLoad) throws BuilderServiceException {
        TestMissingFieldExtract1<?,?> lastTest = null;
-       int totalFieldsToTest = payLoadFactory.getAllMandatoryFields().size();
+       int totalFieldsToTest = payLoadFactory.getAllFields().size();
        List<String> fieldPassed = new ArrayList<>();
        for (int fieldIndexToTest=0;fieldIndexToTest<totalFieldsToTest;fieldIndexToTest++) {
            boolean failed = false;
@@ -74,7 +77,7 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
                throw (e2);
            }
            if (!failed) {
-               String key = payLoadFactory.getAllMandatoryFields().get(fieldIndexToTest);
+               String key = payLoadFactory.getAllFields().get(fieldIndexToTest);
                int revision = RevisionUtil.getRevisionFromClassName(payLoadFactory.getClass().getSimpleName());
                
                if (testPayLoad.isMandatory(key, revision)) {
@@ -101,8 +104,8 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
        
        //Test Missing Fields from revision 1 payload and factory
        System.out.println("Using alert (rev 1) payload...");
-       AlertPayLoadFactory1 alertPayLoadFactory1 = new AlertPayLoadFactory1();
-       AlertTestPayLoad1 alertTestPayLoad1 = new AlertTestPayLoad1();
+       AlertPayLoadFactory1<Alert> alertPayLoadFactory1 = new AlertPayLoadFactory1<>();
+       AlertTestPayLoad1<Alert> alertTestPayLoad1 = new AlertTestPayLoad1<>();
        boolean fail = test(alertPayLoadFactory1, alertTestPayLoad1);
        
        if (!fail) {

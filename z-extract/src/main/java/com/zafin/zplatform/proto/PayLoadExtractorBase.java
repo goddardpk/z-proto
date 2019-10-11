@@ -1,19 +1,23 @@
 package com.zafin.zplatform.proto;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class PayLoadExtractorBase implements PayLoadExtractor {
+import com.zafin.zplatform.proto.factory.PayLoadFactory;
 
-    private final PayLoadFactory payLoadFactory;
+public class PayLoadExtractorBase<T> implements PayLoadExtractor {
+
+    private final PayLoadFactory<T> payLoadFactory;
     
-    public PayLoadExtractorBase() {
-        this.payLoadFactory = create();
+    @SuppressWarnings("unchecked")
+	public PayLoadExtractorBase(Schema schema) {
+        this.payLoadFactory = ( PayLoadFactory<T>)create(schema);
     }
     
-    private PayLoadFactory create() {
-        return new ExtractorPayLoadFactory() {
-            private PayLoadFactory previousPayLoadFactory;
+    private PayLoadFactory<?> create(Schema schema) {
+        return new ExtractorPayLoadFactory<T>() {
+            private PayLoadFactory<?> previousPayLoadFactory;
             
             @Override
             public PayLoad create(Object source) {
@@ -30,24 +34,41 @@ public class PayLoadExtractorBase implements PayLoadExtractor {
             }
 
             @Override
-            public PayLoadFactory getPreviousPayLoadFactory() {
+            public PayLoadFactory<?> getPreviousPayLoadFactory() {
                 return previousPayLoadFactory;
             }
 
             @Override
-            public void setPreviousPayLoadFactory(PayLoadFactory previousPayLoadFactory) {
+            public void setPreviousPayLoadFactory(PayLoadFactory<?> previousPayLoadFactory) {
                 this.previousPayLoadFactory = previousPayLoadFactory;
             }
 
             @Override
-            public List<String> getAllMandatoryFields() {
-                return Collections.emptyList();
+            public List<String> getAllFields() {
+            	List<String> fields = new ArrayList<>();
+            	if (previousPayLoadFactory != null) {
+            		fields.addAll(previousPayLoadFactory.getAllFields());
+            	} else {
+            		fields.addAll(getJustMyFields());
+            	}
+                return fields;
             }
 
             @Override
-            public List<String> getJustMyMandatoryFields() {
-                return Collections.emptyList();
+            public List<String> getJustMyFields() {
+                return schema.getFields().stream().map(x -> x.toString()).collect(Collectors.toList());
             }
+
+			@Override
+			public int getRevision() {
+				return payLoadFactory.getRevision(); 
+			}
+
+			@Override
+			public Class<T> getClazz() {
+				return payLoadFactory.getClazz();
+			}
+
         };
     }
     

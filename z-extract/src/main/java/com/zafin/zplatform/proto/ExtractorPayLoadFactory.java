@@ -1,4 +1,6 @@
 package com.zafin.zplatform.proto;
 
-public interface ExtractorPayLoadFactory extends PayLoadFactory {
+import com.zafin.zplatform.proto.factory.PayLoadFactory;
+
+public interface ExtractorPayLoadFactory<T> extends PayLoadFactory<T> {
 }

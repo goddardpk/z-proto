@@ -3,6 +3,8 @@ package com.zafin.zplatform.proto;
 import java.util.List;
 import java.util.Map;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 /**
  * The ExtractorProcessor works with Change Sets. An ExtractorProcessor will
  * only get a payload from an 'exportable' change set. A change set is deemed

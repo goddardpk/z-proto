@@ -1,6 +1,8 @@
-package com.zafin.zplatform.proto;
+package com.zafin.zplatform.proto.service;
 
 import java.util.Map;
+
+import com.zafin.zplatform.proto.BuilderPopulator;
 
 /**
  * This Builder does not care about how a builder service creates a record.
@@ -30,5 +32,7 @@ public interface RevisableBuilderService<T,B> extends RemoteBuilderService<T,B> 
     int getEndingCompatibleRevision();
     
     RevisableBuilderService<T,B> routeTo(Map<String, Object> props);
+    
+    BuilderPopulator<T, B> getBuilderPopulator();
 
 }

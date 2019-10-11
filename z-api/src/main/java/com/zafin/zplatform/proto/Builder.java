@@ -1,4 +1,7 @@
 package com.zafin.zplatform.proto;
+
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 /**
 * Insulate system services from handling Avro generated builders directly.
 * <BR><BR>
@@ -11,9 +14,9 @@ package com.zafin.zplatform.proto;
 * 
 **/
 public interface Builder<T,B> extends Cloneable {
-    Builder<T,B> feedMe(PayLoad payload)  throws BuilderServiceException;
+    B seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
     T build();
-    B createNewNativeBuilder();
+    B getNativeBuilder();
     BuilderPopulator<T,B> getBuilderPopulator();
     Builder<T,B> getPreviousBuilder();
     void setPreviousBuilder(Builder<T,B> previous);

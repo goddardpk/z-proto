@@ -3,6 +3,8 @@ package com.zafin.zplatform.proto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 public class TargetSystemChangeSetValidator {
     private final Client<?,?> client;
     public TargetSystemChangeSetValidator(Client<?,?> client) {

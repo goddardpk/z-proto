@@ -1,4 +1,4 @@
-package com.zafin.zplatform.proto;
+package com.zafin.zplatform.proto.exception;
 /**
  * Every system record will have an API for its build process.
  * If a system has a Foo record then there will be:

@@ -3,6 +3,8 @@ package com.zafin.zplatform.proto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 public class TestExtract1<T,B> {
     static int numTargetSystemsPerChangeSet = 2;
     

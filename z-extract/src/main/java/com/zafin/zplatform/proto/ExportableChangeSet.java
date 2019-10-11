@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 /**
  * An exportable changeset is derived from a prior changeset.
  * This internal state of the original (validChangeSet) should not be tampered with.

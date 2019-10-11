@@ -1,6 +1,4 @@
-package com.zafin.zplatform.proto.service;
-
-import com.zafin.zplatform.proto.BuilderServiceException;
+package com.zafin.zplatform.proto.exception;
 
 public class PayLoadException extends BuilderServiceException {
     private static final long serialVersionUID = 1L;
