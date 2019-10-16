@@ -1,5 +1,8 @@
 package com.zafin.zplatform.proto.service;
 
+import java.util.List;
+
+import com.zafin.zplatform.proto.BuilderPopulator;
 import com.zafin.zplatform.proto.PayLoad;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
@@ -12,7 +15,8 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  * @author Paul Goddard
  *
  */
-public interface RemoteBuilderService<T,B> {
+public interface RemoteBuilderService<T,B> extends  BuilderPopulator<T,B> {
+	RemoteBuilderService<T, B> setup(RemoteBuilderService<?,?> remoteBuilderService);
 	/**
 	 * Honest process to insure backwards compatibility:
 	 * If Builders contain all the required instantiation parameters,
@@ -20,12 +24,12 @@ public interface RemoteBuilderService<T,B> {
 	 * previous builders before attempting to populate the current builder.
 	 *
 	 * @param payload
-	 * @return
+	 * @return A List of all 'seeded' builders starting with oldest first
 	 * @throws BuilderServiceException  If a previous builder is unable to support the given payload a BuilderServiceException will be thrown.
 	 */
-    B seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
+    List<?> seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
     
-    T build(B builder) throws BuilderServiceException;
+    T build(Object builder) throws BuilderServiceException;
     //B getBuilder() throws BuilderServiceException;
     
     //TransferState<?,?> getTransferState() throws BuilderServiceException;

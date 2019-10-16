@@ -4,13 +4,13 @@
 
     <parent>
         <groupId>com.zafin.zplatform</groupId>
-        <artifactId>z-proto-revision1</artifactId>
+        <artifactId>z-proto-revision2</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>z-proto-zrpe1-source</artifactId>
-    <name>z-proto-zrpe1-source</name>
+    <artifactId>z-proto-zrpe2-avro-source</artifactId>
+    <name>z-proto-zrpe2-avro-source</name>
 
     <properties>
         <maven.version>3.5.0</maven.version>
@@ -62,16 +62,6 @@
         </dependency>
         <dependency>
             <groupId>org.apache.avro</groupId>
-            <artifactId>avro-maven-plugin</artifactId>
-            <version>${avro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro-compiler</artifactId>
-            <version>${avro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.avro</groupId>
             <artifactId>avro-ipc</artifactId>
             <version>${avro.version}</version>
               <exclusions>
@@ -80,6 +70,16 @@
                     <artifactId>servlet-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-maven-plugin</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-compiler</artifactId>
+            <version>${avro.version}</version>
         </dependency>
     </dependencies>
 
@@ -90,7 +90,7 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <goalPrefix>z-proto-zrpe1-ecore-avro</goalPrefix>
+                    <goalPrefix>zplat-ecore-avro-proto</goalPrefix>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
                 <executions>

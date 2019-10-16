@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-       <module>z-proto-zrpe2-source</module>
+       <module>z-proto-zrpe2-avro-source</module>
        <module>z-proto-zrpe2</module>
        <module>z-proto-zrpe2-test</module>
     </modules>

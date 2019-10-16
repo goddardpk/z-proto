@@ -4,18 +4,13 @@
 
     <parent>
         <groupId>com.zafin.zplatform</groupId>
-        <artifactId>z-proto</artifactId>
+        <artifactId>z-extract</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     
-    <artifactId>z-extract</artifactId>
-    <name>z-extract</name>
-    <packaging>pom</packaging>
-    <modules>
-	<module>z-extract-avro</module>
-	<module>z-extract-core</module>
-    </modules>
+    <artifactId>z-extract-core</artifactId>
+    <name>z-extract-core</name>
 
     <dependencies>
         <dependency>

@@ -22,8 +22,8 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  */
 public interface Client<T, B> {
     
-    Client<T,B> getPreviousClient();
-    void setPreviousClient(Client<T,B> client);
+    Client<?,?> getPreviousClient();
+    void setPreviousClient(Client<?,?> client);
     
     Class<?> getSupportedClient();
     
@@ -52,5 +52,9 @@ public interface Client<T, B> {
      * @throws BuilderServiceException
      */
     T create(PayLoad payload) throws BuilderServiceException;
+    
+    T build(Object builder);
+    
+    T create(B builder);
 
 }

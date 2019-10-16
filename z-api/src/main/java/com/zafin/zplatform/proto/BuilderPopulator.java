@@ -1,5 +1,8 @@
 package com.zafin.zplatform.proto;
 
+
+import java.util.List;
+
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 /**
@@ -40,11 +43,24 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  * @param <B>
  */
 public interface BuilderPopulator<T,B> {
-    B seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
+	/**
+	 * 
+	 * @param payload
+	 * @return List of populated builders ordered oldest to newest
+	 * @throws BuilderServiceException
+	 */
+    List<?> seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
     void setPreviousPopulator(BuilderPopulator<?,?> previous);
     BuilderPopulator<?,?> getPreviousPopulator();
-    Object getBuilder();
-    void setBuilder(B builder);
-    TransferState<?,B> getTransferState();
+    B getCurrentBuilder();
+    void setCurrentBuilder(B builder);
+    TransferState<?,?> getTransferState();
     PayLoad loadTestPayLoad(PayLoad payload);
+    /**
+     * Transfer state from oldest populator to next oldest populator
+     * @return true if all states were moved to most current populator
+     */
+    boolean transferStateForward() throws BuilderServiceException;
+    
+    PayLoad createPayloadFrom(Object genericFrameworkRecord) throws BuilderServiceException;
 }

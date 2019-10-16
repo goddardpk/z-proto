@@ -1,5 +1,7 @@
 package com.zafin.zplatform.proto;
 
+import java.util.List;
+
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 /**
@@ -14,10 +16,11 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
 * 
 **/
 public interface Builder<T,B> extends Cloneable {
-    B seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
+    List<?> seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
     T build();
     B getNativeBuilder();
     BuilderPopulator<T,B> getBuilderPopulator();
-    Builder<T,B> getPreviousBuilder();
-    void setPreviousBuilder(Builder<T,B> previous);
+    Builder<?,?> getPreviousBuilder();
+    void setPreviousBuilder(Builder<?,?> previous);
+    T build(Object builder);
 }
