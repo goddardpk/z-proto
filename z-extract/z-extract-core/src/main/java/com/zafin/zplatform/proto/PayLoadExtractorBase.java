@@ -73,7 +73,7 @@ public class PayLoadExtractorBase<T> implements PayLoadExtractor {
     }
     
     @Override
-    public PayLoad getPayLoad(Object changeSet) {
+    public PayLoad getPayLoad(Object changeSet) throws BuilderServiceException {
         return payLoadFactory.create(changeSet);
     }
 

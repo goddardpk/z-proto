@@ -61,6 +61,10 @@ public interface BuilderPopulator<T,B> {
      * @return true if all states were moved to most current populator
      */
     boolean transferStateForward() throws BuilderServiceException;
+    B seedBuilder(PayLoad payload) throws BuilderServiceException;
+	boolean canConvert(Object object, Class<?> toType);
+	Object convert(Object object, Class<?> toType) throws BuilderServiceException;
+	TypeConverter getTypeConverter();
+	List<Class<?>> supportedTypes() throws BuilderServiceException;
     
-    PayLoad createPayloadFrom(Object genericFrameworkRecord) throws BuilderServiceException;
 }

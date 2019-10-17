@@ -45,12 +45,7 @@
         </dependency>
         <dependency>
             <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-proto-zrpe1-source</artifactId>
-            <version>${z.proto.implementation.version}</version>
-        </dependency>
-         <dependency>
-            <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-spring-revision1</artifactId>
+            <artifactId>z-proto-zrpe1-avro-source</artifactId>
             <version>${z.proto.implementation.version}</version>
         </dependency>
     </dependencies>

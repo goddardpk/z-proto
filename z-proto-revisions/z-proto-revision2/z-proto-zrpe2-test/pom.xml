@@ -38,17 +38,12 @@
         </dependency>
         <dependency>
             <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-proto-zrpe2-ecore-avro</artifactId>
+            <artifactId>z-proto-zrpe2-avro-source</artifactId>
             <version>${z.proto.implementation.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-spring-core</artifactId>
-            <version>${z.proto.implementation.version}</version>
-        </dependency>
-           <dependency>
-            <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-spring-revision2</artifactId>
+            <artifactId>z-proto-zrpe2-ecore-avro</artifactId>
             <version>${z.proto.implementation.version}</version>
         </dependency>
     </dependencies>

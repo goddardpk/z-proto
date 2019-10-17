@@ -13,15 +13,5 @@
     <name>z-extract-core</name>
 
     <dependencies>
-        <dependency>
-             <groupId>com.zafin.zplatform</groupId>
-             <artifactId>z-api</artifactId>
-             <version>${z.proto.implementation.version}</version>
-        </dependency>
-        <dependency>
-             <groupId>com.zafin.zplatform</groupId>
-             <artifactId>z-service</artifactId>
-             <version>${z.proto.implementation.version}</version>
-        </dependency>
     </dependencies>
 </project>

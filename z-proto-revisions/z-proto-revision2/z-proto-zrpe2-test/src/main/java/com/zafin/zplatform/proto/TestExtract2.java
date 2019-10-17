@@ -3,22 +3,11 @@ package com.zafin.zplatform.proto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
-import com.zafin.zplatform.proto.service.StartupArgs;
 
 public class TestExtract2<T,B> {
     static int numTargetSystemsPerChangeSet = 2;
     
-    @SuppressWarnings("unchecked")
-    private ServiceRegistry<T,B> createService(String configClass, String applicationClass, StartupArgs args) {
-        return SpringServiceRegistryEntry.builder()
-                .setSpringConfig(configClass)
-                .setSpringApplicationClass(applicationClass)
-                .setArgs(args)
-                .build();
-    }
     
     public List<TargetSystem> getMockTargetSystems(String targetName,Client<?,?> client) {
         List<TargetSystem> list = new ArrayList<>();

@@ -16,4 +16,8 @@
 	<module>z-proto-revision1</module>
 	<module>z-proto-revision2</module>
     </modules>
+    
+    <dependencies>
+    </dependencies>
+
 </project>
