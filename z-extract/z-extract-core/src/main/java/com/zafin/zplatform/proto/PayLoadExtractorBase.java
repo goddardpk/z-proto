@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.PayLoadFactory;
 
 public class PayLoadExtractorBase<T> implements PayLoadExtractor {

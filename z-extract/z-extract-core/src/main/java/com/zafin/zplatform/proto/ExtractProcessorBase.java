@@ -14,9 +14,10 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  * @author Paul Goddard
  *
  */
-public class ExtractProcessor {
+public class ExtractProcessorBase implements ExtractProcessor {
 
-    public PayLoad getPayLoad(ChangeSet changeSet,List<TargetSystem> targetSystems) throws BuilderServiceException {
+    @Override
+	public PayLoad getPayLoad(ChangeSet changeSet,List<TargetSystem> targetSystems) throws BuilderServiceException {
         /*
          * Surprise: ExportableChangeSet is already a Payload
          */

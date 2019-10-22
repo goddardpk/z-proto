@@ -49,22 +49,23 @@ public interface BuilderPopulator<T,B> {
 	 * @return List of populated builders ordered oldest to newest
 	 * @throws BuilderServiceException
 	 */
-    List<?> seedOldBuilderFirst(PayLoad payload) throws BuilderServiceException;
+    B seed(PayLoad payload,Object emptyCurrentBuilder, BuilderPopulator<?,?> previousBuilder) throws BuilderServiceException;
     void setPreviousPopulator(BuilderPopulator<?,?> previous);
     BuilderPopulator<?,?> getPreviousPopulator();
     B getCurrentBuilder();
     void setCurrentBuilder(B builder);
     TransferState<?,?> getTransferState();
+    void setTransferState(TransferState<?,?> transferState);
     PayLoad loadTestPayLoad(PayLoad payload);
     /**
      * Transfer state from oldest populator to next oldest populator
      * @return true if all states were moved to most current populator
      */
-    boolean transferStateForward() throws BuilderServiceException;
-    B seedBuilder(PayLoad payload) throws BuilderServiceException;
+    boolean transferStateForward(PayLoad payload) throws BuilderServiceException;
 	boolean canConvert(Object object, Class<?> toType);
 	Object convert(Object object, Class<?> toType) throws BuilderServiceException;
 	TypeConverter getTypeConverter();
-	List<Class<?>> supportedTypes() throws BuilderServiceException;
-    
+	List<Class<?>> getSupportedTypes() throws BuilderServiceException;
+    String getSupportedPackageName() throws BuilderServiceException;
+    int getRevision();
 }

@@ -25,11 +25,6 @@
         </dependency>
         <dependency>
             <groupId>com.zafin.zplatform</groupId>
-            <artifactId>z-extract</artifactId>
-            <version>${z.proto.implementation.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zafin.zplatform</groupId>
             <artifactId>z-proto-zrpe1-avro</artifactId>
             <version>${z.proto.implementation.version}</version>
         </dependency>

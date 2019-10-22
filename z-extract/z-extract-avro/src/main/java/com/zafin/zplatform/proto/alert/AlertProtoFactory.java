@@ -45,58 +45,7 @@ public class AlertProtoFactory<T,B> extends ProtoFactoryBase<T,B> {
 	 */
 	public TransferStateFactory createTransferStateFactory(Class<?> oldSource, Class<?> newTarget) {
 		return new TransferStateFactory() {
-			private Class<?> SOURCE = oldSource;
-			private Class<?> TARGET = newTarget;
-		
-			@Override
-			public TransferState<?, ?> createTransferState(Object oldObject, Object newObject)
-					throws BuilderServiceException {
-				return new TransferState<com.zafin.models.avro1.Alert,com.zafin.models.avro1.Alert>() {
-
-					@Override
-					public Alert transferState(Object oldState) throws BuilderServiceException {
-						
-						if (!oldState.getClass().isAssignableFrom(SOURCE)) {
-							throw new BuilderServiceException("Invalid argument: oldState argument must be type: [" + SOURCE.getCanonicalName() + "] not [" + oldState.getClass().getCanonicalName() + "].");
-						}
-						
-						Alert newState = convert((Alert)oldState);
-						if (!newState.getClass().isAssignableFrom(TARGET)) {
-							throw new BuilderServiceException("Invalid argument: newState argument must be type: [" + TARGET.getCanonicalName() + "] not [" + newState.getClass().getCanonicalName() + "].");
-						}
-						return newState;
-					}
-
-					@Override
-					public Class<?> getNewType() {
-						return SOURCE;
-					}
-
-					@Override
-					public Class<?> getOldType() {
-						return TARGET;
-					}
-					//TODO: Trying out Avro hack to move state from one class to another
-					private com.zafin.models.avro1.Alert convert(GenericRecord myRecord) throws BuilderServiceException {
-						GenericDatumWriter<GenericRecord> writer = new GenericDatumWriter<GenericRecord>(com.zafin.models.avro1.Alert.getClassSchema());
-						ByteArrayOutputStream out = new ByteArrayOutputStream();
-						Encoder encoder = EncoderFactory.get().binaryEncoder(out, null);
-						try {
-							writer.write(myRecord, encoder);
-							encoder.flush();
-
-							byte[] avroData = out.toByteArray();
-							out.close();
-
-							SpecificDatumReader<com.zafin.models.avro1.Alert> reader = new SpecificDatumReader<com.zafin.models.avro1.Alert>(com.zafin.models.avro1.Alert.class);
-							Decoder decoder = DecoderFactory.get().binaryDecoder(avroData, null);
-							return reader.read(null, decoder);
-						} catch (Exception e) {
-							throw new BuilderServiceException("Unable to convert state.",e);
-						}
-					}
-				};
-			}};
+		}; 
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -120,11 +69,11 @@ public class AlertProtoFactory<T,B> extends ProtoFactoryBase<T,B> {
 		}
 		return payload;
     }
-	
+	//Limited in regards to enforcing default values
 	static class LimitedBuilder extends GenericRecordBuilder {
 
-		public LimitedBuilder(GenericRecordBuilder other) {
-			super(other);
+		public LimitedBuilder(GenericRecordBuilder genericRecord) {
+			super(genericRecord);
 		}
 		
 		public Object defaultValue(Field field) throws IOException {
@@ -134,6 +83,5 @@ public class AlertProtoFactory<T,B> extends ProtoFactoryBase<T,B> {
 				return null;
 			}
 		}
-		
 	}
 }

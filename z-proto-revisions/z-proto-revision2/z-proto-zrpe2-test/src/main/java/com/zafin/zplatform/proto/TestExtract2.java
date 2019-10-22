@@ -6,8 +6,17 @@ import java.util.List;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 public class TestExtract2<T,B> {
-    static int numTargetSystemsPerChangeSet = 2;
+    public ExtractProcessor getExtractProcessor() {
+		return extractProcessor;
+	}
+
+	public void setExtractProcessor(ExtractProcessor extractProcessor) {
+		this.extractProcessor = extractProcessor;
+	}
+
+	static int numTargetSystemsPerChangeSet = 2;
     
+    private ExtractProcessor extractProcessor;
     
     public List<TargetSystem> getMockTargetSystems(String targetName,Client<?,?> client) {
         List<TargetSystem> list = new ArrayList<>();
@@ -37,7 +46,7 @@ public class TestExtract2<T,B> {
     
     public boolean canCreatePayLoad(Client<?,?> client, List<TargetSystem> targetSystems, ChangeSet testChangeSet) throws BuilderServiceException {
         boolean passed = false;
-        PayLoad payload = new ExtractProcessor().getPayLoad(testChangeSet, targetSystems);
+        PayLoad payload = extractProcessor.getPayLoad(testChangeSet, targetSystems);
         if (payload != null) {
             passed = true;
         }

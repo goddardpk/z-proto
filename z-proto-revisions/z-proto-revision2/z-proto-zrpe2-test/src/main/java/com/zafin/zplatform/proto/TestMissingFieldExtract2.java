@@ -93,28 +93,28 @@ public class TestMissingFieldExtract2<T,B> extends TestExtract2<T,B> {
        return fieldPassed.isEmpty();
    }
    
-   public static void main(String[] args) throws BuilderServiceException {
-       System.out.println("Test Back-end schema is in sync with PayLoad Factory...");
-       
-       //TODO There must be a better way to preserve startup state used across Spring configuration 
-       //This (saving startup state) is a hack until a better solution avails itself.
-       //This is bad because it ties tests to Spring configuration artifacts
-       StartupArgs startupArgs = new StartupArgs(args);
-       //AlertSpringConfig2.STARTUP_ARGS = startupArgs;
-       
-       //Test Missing Fields from revision 1 payload and factory
-       System.out.println("Using alert (rev 1) payload...");
-       //Test Missing Fields from revision 2 payload and factory
-       AlertPayLoadFactory2 alertPayLoadFactory2 = new AlertPayLoadFactory2();
-       AlertTestPayLoad2 alertTestPayLoad2 = new AlertTestPayLoad2();
-       boolean fail = test(alertPayLoadFactory2, alertTestPayLoad2);
-
-       if (!fail) {
-           System.out.println("Test failed: Schema is out of sync with PayLoadFactory rev 2. Mandatory field defined in factory is not defined correctly in back-end schema definition.");
-           throw new IllegalStateException("Expected Builder Service Exception since mandatory field was missing.");
-       } else {
-           System.out.println("Test passed.");
-       }
-       
-   }
+//   public static void main(String[] args) throws BuilderServiceException {
+//       System.out.println("Test Back-end schema is in sync with PayLoad Factory...");
+//       
+//       //TODO There must be a better way to preserve startup state used across Spring configuration 
+//       //This (saving startup state) is a hack until a better solution avails itself.
+//       //This is bad because it ties tests to Spring configuration artifacts
+//       StartupArgs startupArgs = new StartupArgs(args);
+//       //AlertSpringConfig2.STARTUP_ARGS = startupArgs;
+//       
+//       //Test Missing Fields from revision 1 payload and factory
+//       System.out.println("Using alert (rev 1) payload...");
+//       //Test Missing Fields from revision 2 payload and factory
+//       AlertPayLoadFactory2<com.zafin.models.avro2.Alert> alertPayLoadFactory2 = new AlertPayLoadFactory2<com.zafin.models.avro2.Alert>();
+//       AlertTestPayLoad2 <com.zafin.models.avro2.Alert>alertTestPayLoad2 = new AlertTestPayLoad2<com.zafin.models.avro2.Alert>();
+//       boolean fail = test(alertPayLoadFactory2, alertTestPayLoad2);
+//
+//       if (!fail) {
+//           System.out.println("Test failed: Schema is out of sync with PayLoadFactory rev 2. Mandatory field defined in factory is not defined correctly in back-end schema definition.");
+//           throw new IllegalStateException("Expected Builder Service Exception since mandatory field was missing.");
+//       } else {
+//           System.out.println("Test passed.");
+//       }
+//       
+//   }
 }
