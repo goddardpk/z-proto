@@ -56,5 +56,7 @@ public interface Client<T, B> {
     T build(Object builder);
     
     T create(B builder);
+    
+    VersionedProtocolConfiguration getVersionedProtocolConfiguration() throws BuilderServiceException;
 
 }

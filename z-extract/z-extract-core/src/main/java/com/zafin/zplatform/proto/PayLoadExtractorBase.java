@@ -1,13 +1,9 @@
 package com.zafin.zplatform.proto;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.PayLoadFactory;
 
-public class PayLoadExtractorBase<T> implements PayLoadExtractor {
+public abstract class PayLoadExtractorBase<T> implements PayLoadExtractor {
 
     private final PayLoadFactory<T> payLoadFactory;
     
@@ -15,7 +11,7 @@ public class PayLoadExtractorBase<T> implements PayLoadExtractor {
 	public PayLoadExtractorBase(Schema schema) {
         this.payLoadFactory = ( PayLoadFactory<T>)create(schema);
     }
-    
+    /*
     private PayLoadFactory<?> create(Schema schema) {
         return new ExtractorPayLoadFactory<T>() {
             private PayLoadFactory<?> previousPayLoadFactory;
@@ -72,10 +68,11 @@ public class PayLoadExtractorBase<T> implements PayLoadExtractor {
 
         };
     }
+    */
     
     @Override
-    public PayLoad getPayLoad(Object changeSet) throws BuilderServiceException {
-        return payLoadFactory.create(changeSet);
+    public PayLoad getPayLoad(Object object) throws BuilderServiceException {
+        return payLoadFactory.create(object);
     }
 
 }

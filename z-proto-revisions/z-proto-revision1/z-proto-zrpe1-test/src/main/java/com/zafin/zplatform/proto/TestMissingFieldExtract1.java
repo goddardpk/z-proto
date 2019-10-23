@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.models.avro1.Alert;
-import com.zafin.zplatform.proto.alert.AlertPayLoadFactory1;
+import com.zafin.zplatform.proto.alert.AvroAlertPayLoadFactory1;
 import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.PayLoadFactory;

@@ -49,7 +49,7 @@ public interface BuilderPopulator<T,B> {
 	 * @return List of populated builders ordered oldest to newest
 	 * @throws BuilderServiceException
 	 */
-    B seed(PayLoad payload,Object emptyCurrentBuilder, BuilderPopulator<?,?> previousBuilder) throws BuilderServiceException;
+    B seed(PayLoad payload) throws BuilderServiceException;
     void setPreviousPopulator(BuilderPopulator<?,?> previous);
     BuilderPopulator<?,?> getPreviousPopulator();
     B getCurrentBuilder();
