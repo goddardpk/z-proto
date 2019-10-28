@@ -15,8 +15,8 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  * @author Paul Goddard
  *
  */
-public interface RemoteBuilderService<T,B> extends  BuilderPopulator<T,B> {
-	RemoteBuilderService<T, B> setup(RemoteBuilderService<?,?> remoteBuilderService);
+public interface RemoteBuilderService<T,B,O> extends  BuilderPopulator<T,B,O> {
+	RemoteBuilderService<T, B,O> setup(RemoteBuilderService<?,?,?> remoteBuilderService);
 	/**
 	 * Honest process to insure backwards compatibility:
 	 * If Builders contain all the required instantiation parameters,
@@ -33,5 +33,5 @@ public interface RemoteBuilderService<T,B> extends  BuilderPopulator<T,B> {
     //B getBuilder() throws BuilderServiceException;
     
     //TransferState<?,?> getTransferState() throws BuilderServiceException;
-    int getRevision();
+    int getRevision() throws BuilderServiceException;
 }

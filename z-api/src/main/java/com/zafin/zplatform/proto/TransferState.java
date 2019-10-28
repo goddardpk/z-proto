@@ -20,6 +20,6 @@ public interface TransferState<O,N> {
 	 * @throws BuilderServiceException if anything goes wrong with state transfer
 	 */
     N transferState(Object oldState, PayLoad payLoad) throws BuilderServiceException;
-    Class<?> getNewType();
-    Class<?> getOldType();
+    Class<N> getNewType();
+    Class<O> getOldType();
 }

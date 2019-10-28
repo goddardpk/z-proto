@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
-public class TestExtract2<T,B> {
+public class TestExtract2<T,B,O> {
     public ExtractProcessor getExtractProcessor() {
 		return extractProcessor;
 	}
@@ -18,7 +18,7 @@ public class TestExtract2<T,B> {
     
     private ExtractProcessor extractProcessor;
     
-    public List<TargetSystem> getMockTargetSystems(String targetName,Client<?,?> client) {
+    public List<TargetSystem> getMockTargetSystems(String targetName,Client<?,?,?> client) {
         List<TargetSystem> list = new ArrayList<>();
         TargetSystemChangeSetValidator mockValidator =  new TargetSystemChangeSetValidator(client);
         for (int i=0;i<numTargetSystemsPerChangeSet;i++) {
@@ -27,7 +27,7 @@ public class TestExtract2<T,B> {
         return list;
     }
     
-    public void assertPass(PayLoad stubData, Client<?,?> client) throws BuilderServiceException {
+    public void assertPass(PayLoad stubData, Client<T,B,O> client) throws BuilderServiceException {
             List<TargetSystem>  mockTargets = getMockTargetSystems("MockTargetSystems",client);
             ChangeSet mockChangeSet = new MockChangeSet2(stubData);
             if (!canCreatePayLoad(client,mockTargets, mockChangeSet)) {
@@ -35,7 +35,7 @@ public class TestExtract2<T,B> {
             }
     }
     
-    public void assertFail(PayLoad stubData, Client<?,?> client) {
+    public void assertFail(PayLoad stubData, Client<T,B,O> client) {
         try {
             assertPass(stubData,client);
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class TestExtract2<T,B> {
         throw new IllegalStateException("Expecting to fail.");
     }
     
-    public boolean canCreatePayLoad(Client<?,?> client, List<TargetSystem> targetSystems, ChangeSet testChangeSet) throws BuilderServiceException {
+    public boolean canCreatePayLoad(Client<T,B,O> client, List<TargetSystem> targetSystems, ChangeSet testChangeSet) throws BuilderServiceException {
         boolean passed = false;
         PayLoad payload = extractProcessor.getPayLoad(testChangeSet, targetSystems);
         if (payload != null) {
@@ -53,7 +53,7 @@ public class TestExtract2<T,B> {
         return passed;
     }
 
-    protected PayLoad decorate(PayLoad payload) {
+    protected PayLoad decorate(PayLoad payload) throws BuilderServiceException {
         return payload; //Does not decoration by default
     }
     

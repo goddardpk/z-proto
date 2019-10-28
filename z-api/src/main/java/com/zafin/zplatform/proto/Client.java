@@ -1,5 +1,6 @@
 package com.zafin.zplatform.proto;
 
+
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 /**
@@ -19,26 +20,17 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  *
  * @param <T> type of record
  * @param <B> builder of record
+ * @param <O> old builder of record
  */
-public interface Client<T, B> {
+public interface Client<T, B, O> extends Builder<T,B,O> {
     
-    Client<?,?> getPreviousClient();
-    void setPreviousClient(Client<?,?> client);
+    Builder<?,?,?> getPreviousBuilder();
+    void setPreviousBuilder(Builder<?,?,?> client);
     
     Class<?> getSupportedClient();
     
     Class<?> getServiceInterface();
     void setServiceInterface(Class<?> serviceInterface);
-
-    /**
-     * Every living thing tests its environment.
-     * This is NOT exclusively a test environment call.
-     * If you throw this client into a mesh of services,
-     * it should be able to test the environment to see if can operate.
-     * 
-     * @throws AlertException
-     */
-    void test() throws BuilderServiceException;
 
     void startService(Class<?> clazz);
     
@@ -58,5 +50,13 @@ public interface Client<T, B> {
     T create(B builder);
     
     VersionedProtocolConfiguration getVersionedProtocolConfiguration() throws BuilderServiceException;
-
+    
+    /**
+     * A test payload acts as a sort of ping request to verify that a client can reach its corresponding server
+     * All client implementations should support a mechanism to load a test payload so that it can verify its environment.
+     * @return
+     * @throws BuilderServiceException 
+     */
+    boolean loadTestPayLoad() throws BuilderServiceException;
+    
 }

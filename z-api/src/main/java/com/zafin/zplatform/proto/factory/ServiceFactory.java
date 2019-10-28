@@ -8,6 +8,6 @@ import com.zafin.zplatform.proto.service.RemoteBuilderService;
  * @param <T>
  * @param <B>
  */
-public interface ServiceFactory<T,B> {
-	RemoteBuilderService<T,B> createRemoteBuilderService(Class<?> clazz);
+public interface ServiceFactory<T,B,O> {
+	RemoteBuilderService<T,B,O> createRemoteBuilderService(Class<?> clazz);
 }

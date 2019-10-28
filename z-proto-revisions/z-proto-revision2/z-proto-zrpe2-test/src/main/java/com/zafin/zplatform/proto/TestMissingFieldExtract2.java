@@ -5,11 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.models.avro2.Alert;
-import com.zafin.zplatform.proto.alert.AvroAlertPayLoadFactory2;
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad2;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.PayLoadFactory;
-import com.zafin.zplatform.proto.service.StartupArgs;
 
 /**
  * Validate that PayLoadFactory is in-sync with underlying schema.
@@ -19,7 +16,7 @@ import com.zafin.zplatform.proto.service.StartupArgs;
  * @author root
  *
  */
-public class TestMissingFieldExtract2<T,B> extends TestExtract2<T,B> {
+public class TestMissingFieldExtract2<T,B,O> extends TestExtract2<T,B,O> {
    
    private final PayLoadFactory<T> payLoadFactory;
    private final int missingFieldIndexToRemove;
@@ -47,7 +44,7 @@ public class TestMissingFieldExtract2<T,B> extends TestExtract2<T,B> {
    
    //Remove a mandatory field from testData
    @Override 
-   public PayLoad decorate(PayLoad testData) {
+   public PayLoad decorate(PayLoad testData) throws BuilderServiceException {
        String key = payLoadFactory.getAllFields().get(missingFieldIndexToRemove);
        if (key == null) {
            System.out.println("Warning: No key value at index: " + missingFieldIndexToRemove);
@@ -59,7 +56,7 @@ public class TestMissingFieldExtract2<T,B> extends TestExtract2<T,B> {
    }
    
    public static boolean test(PayLoadFactory<Alert> payLoadFactory, PayLoad testPayLoad) throws BuilderServiceException {
-       TestMissingFieldExtract2<?,?> lastTest = null;
+       TestMissingFieldExtract2<Alert,Alert.Builder,com.zafin.models.avro1.Alert.Builder> lastTest = null;
        int totalFieldsToTest = payLoadFactory.getAllFields().size();
        List<String> fieldPassed = new ArrayList<>();
        for (int fieldIndexToTest=0;fieldIndexToTest<totalFieldsToTest;fieldIndexToTest++) {

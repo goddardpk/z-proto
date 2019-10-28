@@ -35,7 +35,7 @@ public class ExtractProcessorBase implements ExtractProcessor {
         }
 
         @Override
-        public void load() {
+        public boolean loadTestData() {
             /*
              * This is where the mapping magic should happen.
              * Get the properties from the held changeset.
@@ -47,7 +47,13 @@ public class ExtractProcessorBase implements ExtractProcessor {
                 // This wholesale load will transfer the held changeset values to its own internal property set.
                 put(entry.getKey(), entry.getValue());
             }
+            return !getAllProperties().isEmpty();
         }
+
+		@Override
+		public boolean supportNullValues() {
+			return false;
+		}
     }
 
 }

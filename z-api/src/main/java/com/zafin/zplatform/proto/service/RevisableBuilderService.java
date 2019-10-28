@@ -3,6 +3,7 @@ package com.zafin.zplatform.proto.service;
 import java.util.Map;
 
 import com.zafin.zplatform.proto.BuilderPopulator;
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 /**
  * This Builder does not care about how a builder service creates a record.
@@ -19,20 +20,20 @@ import com.zafin.zplatform.proto.BuilderPopulator;
  * @param <T>
  * @param <B>
  */
-public interface RevisableBuilderService<T,B> extends RemoteBuilderService<T,B> {
+public interface RevisableBuilderService<T,B,O> extends RemoteBuilderService<T,B,O> {
 
-    boolean isSubRevision(int revision);
+    boolean isSubRevision(int revision) throws BuilderServiceException;
     
-    RevisableBuilderService<T,B> getPreviousCompatibleService();
+    RevisableBuilderService<T,B,O> getPreviousCompatibleService();
     
-    void setPreviousCompatibleService(RevisableBuilderService<T,B> previousCompatibleService);
+    void setPreviousCompatibleService(RevisableBuilderService<T,B,O> previousCompatibleService);
 
-    int getStartingCompatibleRevision();
+    int getStartingCompatibleRevision() throws BuilderServiceException;
 
-    int getEndingCompatibleRevision();
+    int getEndingCompatibleRevision() throws BuilderServiceException;
     
-    RevisableBuilderService<T,B> routeTo(Map<String, Object> props);
+    RevisableBuilderService<T,B,O> routeTo(Map<String, Object> props);
     
-    BuilderPopulator<T, B> getBuilderPopulator();
+    BuilderPopulator<T,B,O> getBuilderPopulator();
 
 }

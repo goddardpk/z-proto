@@ -6,8 +6,8 @@ import java.util.List;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 
 public class TargetSystemChangeSetValidator {
-    private final Client<?,?> client;
-    public TargetSystemChangeSetValidator(Client<?,?> client) {
+    private final Client<?,?,?> client;
+    public TargetSystemChangeSetValidator(Client<?,?,?> client) {
         if (client == null) {
             throw new IllegalArgumentException("Null client");
         }

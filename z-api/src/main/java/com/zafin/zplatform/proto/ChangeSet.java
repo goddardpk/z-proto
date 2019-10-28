@@ -4,12 +4,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 public abstract class ChangeSet implements PayLoad {
     private PayLoad previousChangeSet;
     protected final Map<String, Object> changes = new HashMap<>();
     private final int revision;
     
-    public ChangeSet(PayLoad payLoad) {
+    public ChangeSet(PayLoad payLoad) throws BuilderServiceException {
         if (payLoad == null) {
             throw new IllegalArgumentException("Null payload ");
         }

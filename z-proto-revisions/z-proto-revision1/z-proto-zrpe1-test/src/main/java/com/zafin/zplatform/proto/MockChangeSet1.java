@@ -1,14 +1,16 @@
 package com.zafin.zplatform.proto;
 
+import com.zafin.zplatform.proto.exception.BuilderServiceException;
+
 public class MockChangeSet1 extends ChangeSet {
     
-    public MockChangeSet1(PayLoad stubData) {
+    public MockChangeSet1(PayLoad stubData) throws BuilderServiceException {
         super(stubData);
     }
     
     @Override
-    public void load() {
-        // TODO Auto-generated method stub
+    public boolean loadTestData() {
+        return false;
     }
     
     @Override
@@ -22,5 +24,10 @@ public class MockChangeSet1 extends ChangeSet {
             throw new IllegalArgumentException("Key [" + key + "] is not in mock changeset.");
         }
     }
+
+	@Override
+	public boolean supportNullValues() {
+		return false;
+	}
 
 }

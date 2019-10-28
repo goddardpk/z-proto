@@ -39,10 +39,11 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
  * 
  * @author Paul Goddard
  *
- * @param <T>
- * @param <B>
+ * @param <T> Type to Build
+ * @param <B> Current Builder to Use
+ * @param <O> Old Builder used
  */
-public interface BuilderPopulator<T,B> {
+public interface BuilderPopulator<T,B,O> {
 	/**
 	 * 
 	 * @param payload
@@ -50,13 +51,13 @@ public interface BuilderPopulator<T,B> {
 	 * @throws BuilderServiceException
 	 */
     B seed(PayLoad payload) throws BuilderServiceException;
-    void setPreviousPopulator(BuilderPopulator<?,?> previous);
-    BuilderPopulator<?,?> getPreviousPopulator();
+    void setPreviousPopulator(BuilderPopulator<?,?,?> previous) throws BuilderServiceException;
+    BuilderPopulator<?,?,?> getPreviousPopulator();
     B getCurrentBuilder();
     void setCurrentBuilder(B builder);
-    TransferState<?,?> getTransferState();
-    void setTransferState(TransferState<?,?> transferState);
-    PayLoad loadTestPayLoad(PayLoad payload);
+    TransferState<O,B> getTransferState();
+    void setTransferState(TransferState<O,B> transferState) throws BuilderServiceException;
+    PayLoad loadTestPayLoad(PayLoad payload) throws BuilderServiceException;
     /**
      * Transfer state from oldest populator to next oldest populator
      * @return true if all states were moved to most current populator
@@ -67,5 +68,6 @@ public interface BuilderPopulator<T,B> {
 	TypeConverter getTypeConverter();
 	List<Class<?>> getSupportedTypes() throws BuilderServiceException;
     String getSupportedPackageName() throws BuilderServiceException;
-    int getRevision();
+    int getRevision() throws BuilderServiceException;
+    B transferState(PayLoad payLoad) throws BuilderServiceException;
 }

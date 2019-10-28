@@ -5,11 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zafin.models.avro1.Alert;
-import com.zafin.zplatform.proto.alert.AvroAlertPayLoadFactory1;
-import com.zafin.zplatform.proto.alert.AlertTestPayLoad1;
 import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.PayLoadFactory;
-import com.zafin.zplatform.proto.service.StartupArgs;
 
 /**
  * Validate that PayLoadFactory is in-sync with underlying schema.
@@ -47,7 +44,7 @@ public class TestMissingFieldExtract1<T,B> extends TestExtract1<T,B> {
    
    //Remove a mandatory field from testData
    @Override 
-   public PayLoad decorate(PayLoad testData) {
+   public PayLoad decorate(PayLoad testData) throws BuilderServiceException {
        String key = payLoadFactory.getAllFields().get(missingFieldIndexToRemove);
        if (key == null) {
            System.out.println("Warning: No key value at index: " + missingFieldIndexToRemove);

@@ -15,10 +15,10 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
 import com.zafin.zplatform.proto.factory.SchemaFactory;
 import com.zafin.zplatform.proto.factory.TransferStateFactory;
 
-public class AlertAvroProtoFactory<T,B> extends ProtoFactoryBase<T,B> {
+public class AlertAvroProtoFactory<T,B,O> extends ProtoFactoryBase<T,B,O> {
 	
 	
-	public AlertAvroProtoFactory(ProtoFactoryBuilder<T, B> builder) {
+	public AlertAvroProtoFactory(ProtoFactoryBuilder<T,B,O> builder) {
 		super(builder);
 	}
 
@@ -48,7 +48,7 @@ public class AlertAvroProtoFactory<T,B> extends ProtoFactoryBase<T,B> {
 		};
 	}
 	
-	public static PayLoad createPayloadFrom(GenericRecordBuilder genericRecordBuilder,BuilderPopulator<?,?> populator) throws BuilderServiceException {
+	public static PayLoad createPayloadFrom(GenericRecordBuilder genericRecordBuilder,BuilderPopulator<?,?,?> populator) throws BuilderServiceException {
 		GenericRecord limitedRecord = (GenericRecord) new LimitedBuilder(genericRecordBuilder).build();
 		PayLoadFactoryBase<com.zafin.models.avro1.Alert> payloadFactory = new AvroAlertPayLoadFactory1<com.zafin.models.avro1.Alert>() ;
 		return payloadFactory.create(genericRecordBuilder);
