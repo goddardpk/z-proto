@@ -15,4 +15,5 @@ public interface PayLoadFactory<T> {
     List<String> getJustMyFields(); //TODO: Delegate to Schema to get this info
     int getRevision();
     Class<T> getClazz();
+	boolean isNullableField(Object fieldName);
 }

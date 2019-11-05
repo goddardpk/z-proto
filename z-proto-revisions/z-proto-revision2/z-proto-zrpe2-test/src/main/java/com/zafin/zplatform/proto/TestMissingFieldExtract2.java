@@ -77,7 +77,7 @@ public class TestMissingFieldExtract2<T,B,O> extends TestExtract2<T,B,O> {
                String key = payLoadFactory.getAllFields().get(fieldIndexToTest);
                int revision = RevisionUtil.getRevisionFromClassName(payLoadFactory.getClass().getSimpleName());
                
-               if (testPayLoad.isMandatory(key, revision)) {
+               if (!testPayLoad.isNullSupported(key)) {
                    fieldPassed.add("Required Field index: [" + lastTest.missingFieldIndexToRemove + "] was missing and should have caused build failure.");
                } else {
                    System.out.println("Field Key [" + key + "] for revision: [" + revision + "] is not required.");

@@ -25,7 +25,7 @@ import com.zafin.zplatform.proto.exception.BuilderServiceException;
 public interface Client<T, B, O> extends Builder<T,B,O> {
     
     Builder<?,?,?> getPreviousBuilder();
-    void setPreviousBuilder(Builder<?,?,?> client);
+    void setPreviousBuilder(Builder<?,?,?> client) throws BuilderServiceException;
     
     Class<?> getSupportedClient();
     
@@ -49,7 +49,7 @@ public interface Client<T, B, O> extends Builder<T,B,O> {
     
     T create(B builder);
     
-    VersionedProtocolConfiguration getVersionedProtocolConfiguration() throws BuilderServiceException;
+    VersionedProtocolConfiguration<T,B,O> getVersionedProtocolConfiguration() throws BuilderServiceException;
     
     /**
      * A test payload acts as a sort of ping request to verify that a client can reach its corresponding server

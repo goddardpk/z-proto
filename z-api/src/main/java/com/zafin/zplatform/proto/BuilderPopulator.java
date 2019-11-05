@@ -50,24 +50,39 @@ public interface BuilderPopulator<T,B,O> {
 	 * @return List of populated builders ordered oldest to newest
 	 * @throws BuilderServiceException
 	 */
-    B seed(PayLoad payload) throws BuilderServiceException;
-    void setPreviousPopulator(BuilderPopulator<?,?,?> previous) throws BuilderServiceException;
-    BuilderPopulator<?,?,?> getPreviousPopulator();
+    B seed(Object source) throws BuilderServiceException;
+    void setPreviousPopulator(BuilderPopulator<?,O,?> previous) throws BuilderServiceException;
+    BuilderPopulator<?,O,?> getPreviousPopulator();
+    BuilderPopulator<?,?,B> getNextPopulator();
+    void setNextPopulator(BuilderPopulator<?,?,B>  nextPopulator) throws BuilderServiceException;
     B getCurrentBuilder();
-    void setCurrentBuilder(B builder);
-    TransferState<O,B> getTransferState();
-    void setTransferState(TransferState<O,B> transferState) throws BuilderServiceException;
+    void setCurrentBuilder(B builder) throws BuilderServiceException;
+    TransferState<T,B,O> getTransferState();
+    void setTransferState(TransferState<T,B,O> transferState) throws BuilderServiceException;
     PayLoad loadTestPayLoad(PayLoad payload) throws BuilderServiceException;
     /**
      * Transfer state from oldest populator to next oldest populator
      * @return true if all states were moved to most current populator
      */
-    boolean transferStateForward(PayLoad payload) throws BuilderServiceException;
 	boolean canConvert(Object object, Class<?> toType);
 	Object convert(Object object, Class<?> toType) throws BuilderServiceException;
 	TypeConverter getTypeConverter();
 	List<Class<?>> getSupportedTypes() throws BuilderServiceException;
     String getSupportedPackageName() throws BuilderServiceException;
     int getRevision() throws BuilderServiceException;
-    B transferState(PayLoad payLoad) throws BuilderServiceException;
+    //B transferState(PayLoad payLoad,O previousBuilder) throws BuilderServiceException;
+    //B transferState(PayLoad payLoad, BuilderPopulator<?,?,?> populator) throws BuilderServiceException;
+    /**
+     * To assume that revision 1 is the initial revision may not be ideal.
+     * This affords some degree of flex in what constitutes an initial revision.
+     * @return
+     * @throws BuilderServiceException
+     */
+    
+    boolean isInitialRevision() throws BuilderServiceException;
+    Object getValue(Object objectKey, Object map) throws BuilderServiceException;
+    
+    //B set(Object objectKey, Object value, Object newBuilder) throws BuilderServiceException;
+    boolean isReady();
+	B set(Object objectKey, Object value, B newBuilder) throws BuilderServiceException;
 }

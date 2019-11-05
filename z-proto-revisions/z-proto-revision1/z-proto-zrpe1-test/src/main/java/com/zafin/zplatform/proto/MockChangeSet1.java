@@ -25,9 +25,5 @@ public class MockChangeSet1 extends ChangeSet {
         }
     }
 
-	@Override
-	public boolean supportNullValues() {
-		return false;
-	}
 
 }

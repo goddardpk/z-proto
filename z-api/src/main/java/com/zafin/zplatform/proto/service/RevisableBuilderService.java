@@ -24,9 +24,9 @@ public interface RevisableBuilderService<T,B,O> extends RemoteBuilderService<T,B
 
     boolean isSubRevision(int revision) throws BuilderServiceException;
     
-    RevisableBuilderService<T,B,O> getPreviousCompatibleService();
+    RevisableBuilderService<?,O,?> getPreviousCompatibleService();
     
-    void setPreviousCompatibleService(RevisableBuilderService<T,B,O> previousCompatibleService);
+    void setPreviousCompatibleService(RevisableBuilderService<?,O,?> previousCompatibleService);
 
     int getStartingCompatibleRevision() throws BuilderServiceException;
 

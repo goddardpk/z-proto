@@ -2605,6 +2605,7 @@
       "name" : "repositoryId",
       "type" : "string"
     }, {
+      "default" : "false"
       "name" : "active",
       "type" : "boolean"
     }, {

@@ -38,11 +38,6 @@ public abstract class ChangeSet implements PayLoad {
     }
 
     @Override
-    public boolean isMandatory(String key, int revision) {
-        return false;
-    }
-
-    @Override
     public void setPreviousPayLoad(PayLoad previousPayLoad) {
         this.previousChangeSet = previousPayLoad;
     }
@@ -61,5 +56,15 @@ public abstract class ChangeSet implements PayLoad {
     public int getRevision() {
         return revision;
     }
+    
+    @Override
+	public boolean supportNullValues() {
+		return true;
+	}
+
+	@Override
+	public Boolean isNullSupported(String fieldName) throws BuilderServiceException {
+		return null;
+	}
 
 }

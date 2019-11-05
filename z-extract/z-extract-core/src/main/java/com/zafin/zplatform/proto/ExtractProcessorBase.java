@@ -54,6 +54,12 @@ public class ExtractProcessorBase implements ExtractProcessor {
 		public boolean supportNullValues() {
 			return false;
 		}
+
+		@Override
+		public Boolean isNullSupported(String fieldName) throws BuilderServiceException {
+			// TODO Auto-generated method stub
+			return false;
+		}
     }
 
 }

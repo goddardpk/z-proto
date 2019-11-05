@@ -48,7 +48,7 @@ public interface Builder<T,B,O> extends Cloneable {
      * @return
      */
     Builder<?,?,?> getPreviousBuilder();
-    void setPreviousBuilder(Builder<?,?,?> previous);
+    void setPreviousBuilder(Builder<?,?,?> previous) throws BuilderServiceException;
     /**
      * Stateful build call
      * @param builder to use
@@ -69,5 +69,6 @@ public interface Builder<T,B,O> extends Cloneable {
 	Class<T> getClassToBuild();
 	Class<B> getCurrentBuilderClass();
 	Class<O> getPreviousBuilderClass();
+	int getRevision() throws BuilderServiceException;
 
 }
