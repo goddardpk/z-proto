@@ -32,9 +32,9 @@
     <modules>
 	   <module>z-api</module>
 	   <module>z-service</module>
-	   <!-- <module>z-extract</module> -->
-	   <!-- <module>z-proto-revisions</module> -->
-       <!-- <module>z-spring</module> -->
+	   <module>z-proto-revisions</module> 
+	   <module>z-extract</module> 
+           <module>z-spring</module> 
     </modules>
     
    <build>
