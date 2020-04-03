@@ -52,12 +52,13 @@ This test ping process can also be used to regression test against multiple targ
 
 The House of Cards also has a mavenized process to draw from the internal serialization framework's meta-data (in this case *.avpro: Avro Protocol Artifacts to generate Java source) These Java artifacts go to z-proto/z-proto-revisions/z-proto-revision1/z-generated-zrpe-source1target/generated-sources.
 
-The revision pathing is pretty verbose (by nesting revisions in this way)...
+The revision path:
 
 proj/proj-revisions/proj-revision1
 
-This (verbose) 'style' keeps the structure orthogonal and manageable over time. This structure will also maintain revisions as immutable locations for their correspoding schema revisions.
-I also attempted to implement this pattern with service implementations as well so the cognitive load is reduced for developer when trying to navigate revision details.
+This (verbose) 'style' keeps these structures manageable over time. This structure will also maintain revisions as immutable locations for their correspoding schema revisions.(Nice way of saying copy & paste schema definitions)
+
+I also attempted to implement this revision pattern with service implementations as well so the cognitive load is reduced for developer when trying to navigate revised services to their corresponding schema source.
 
 The basic design attempts to simplify some of the complexities in supporting a data extraction pipeline without coupling an implementation to any particular technology. In fact, the service api is agnostic to the internal meachanics on the objects it is creating and consuming.
 
